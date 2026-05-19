@@ -283,8 +283,8 @@
 .stat-card-pink p { @apply text-[13px] text-white/75 leading-[1.5]; }
 
 /* Footer */
-.footer { @apply bg-[#f9f9f9] pt-16 relative z-10; }
-.footer-socials { @apply flex flex-col gap-5 p-[40px_20px] absolute left-0 top-0 h-full; }
+.footer { @apply bg-[#f9f9f9] pt-10 md:pt-16 relative z-10; }
+.footer-socials { @apply flex flex-row justify-center md:justify-start md:flex-col gap-6 md:gap-5 p-6 md:p-[40px_20px] static md:absolute left-0 top-0 h-auto md:h-full w-full md:w-auto border-b md:border-b-0 border-[#eee] mb-4 md:mb-0; }
 .back-to-top { @apply absolute top-[20px] right-[30px] text-[12px] text-[#999] cursor-pointer hover:text-[#E8345A] font-normal flex items-center gap-1 transition-colors z-50 no-underline; }
 @media (max-width: 768px) {
   .back-to-top {
@@ -300,8 +300,8 @@
 .footer-contact-item { @apply flex items-start gap-2.5 text-[13px] text-[#444] mb-[12px]; }
 .footer-contact-item svg { @apply text-[#E8345A] mt-[2px] flex-none; }
 .footer-tagline { @apply text-[clamp(32px,5vw,60px)] font-normal italic text-[#E8345A] leading-[1.2] text-center w-full mt-10; }
-.footer-bottom { @apply flex flex-col gap-3 border-t border-[#eee] mt-8 p-4 px-6 md:px-20 text-[12px] text-[#aaa]; }
-.footer-bottom-top { @apply flex justify-between items-center; }
+.footer-bottom { @apply flex flex-col gap-3 border-t border-[#eee] mt-8 p-4 px-6 md:px-20 text-[12px] text-[#aaa] text-center md:text-left; }
+.footer-bottom-top { @apply flex flex-col md:flex-row justify-between items-center gap-4; }
 .footer-bottom a { @apply text-[#aaa] transition hover:text-[#E8345A]; }
 
 .about-content {

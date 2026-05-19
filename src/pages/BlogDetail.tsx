@@ -17,10 +17,10 @@ export default function BlogDetail() {
       {/* Article Section */}
       <section className="py-20 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             
             {/* Left Content */}
-            <div className="lg:col-span-8">
+            <div className="md:col-span-8">
               <article className="blog-article">
                 <div className="text-center mb-10">
                   <time className="block text-[#e91e8c] font-extrabold text-xs uppercase tracking-[0.2em] mb-4">
@@ -124,7 +124,7 @@ export default function BlogDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-24">
+            <div className="md:col-span-4 space-y-8 md:sticky md:top-24">
                {/* Search */}
                <div className="p-8 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
                  <h3 className="text-base font-bold mb-6 text-white uppercase tracking-wider">Search Blog</h3>
