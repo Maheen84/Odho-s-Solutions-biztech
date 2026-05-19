@@ -40,7 +40,7 @@ export default function Blog() {
     // App Development
     { title: "Building Your API Stack", category: "App Development", date: "18 Jan 2024", author: "Lana Steiner", img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=700&q=85", tags: ["Software", "API"], slug: "api-stack" },
     { title: "Intro to GraphQL", category: "App Development", date: "14 Jan 2024", author: "Lana Steiner", img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=700&q=85", tags: ["Software", "GraphQL"], slug: "intro-graphql" },
-    { title: "Docker for Beginners", category: "App Development", date: "11 Jan 2024", author: "Alex Whitten", img: "https://images.unsplash.com/photo-1618401471353-b98a5233c591?auto=format&fit=crop&w=700&q=85", tags: ["Software", "DevOps"], slug: "docker-beginners" },
+    { title: "Docker for Beginners", category: "App Development", date: "11 Jan 2024", author: "Alex Whitten", img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=700&q=85", tags: ["Software", "DevOps"], slug: "docker-beginners" },
     // Branding
     { title: "How to Build a Brand Identity", category: "Branding", date: "17 Jan 2024", author: "Alex Whitten", img: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=700&q=85", tags: ["Branding", "Identity"], slug: "brand-identity" },
     { title: "Logo Design Principles", category: "Branding", date: "13 Jan 2024", author: "Demi Wilkinson", img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=700&q=85", tags: ["Branding", "Logo"], slug: "logo-principles" },

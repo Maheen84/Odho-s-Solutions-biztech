@@ -50,7 +50,7 @@ export default function Home() {
     { title: "Regal Event Company", desc: "Enterprise event planning platform with seamless booking and interactive maps.", tags: ["Ecommerce", "WordPress", "SEO", "Hosting"], img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" },
     { title: "TechPortal Analytics", desc: "Modern analytics dashboard providing real-time data insights and performance reports.", tags: ["React", "Dashboard", "API"], img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" },
     { title: "HealthTrack Pro", desc: "Personalized wellness app tracking activity, nutrition, and vital health metrics.", tags: ["Mobile", "Flutter", "Firebase"], img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80" },
-    { title: "ShopSwift E-com", desc: "Fast, secure, and user-centric marketplace designed for high-volume retail traffic.", tags: ["Next.js", "Stripe", "Postgres"], img: "https://images.unsplash.com/photo-1556742049-3cf94640d5e8?auto=format&fit=crop&w=400&q=80" },
+    { title: "ShopSwift E-com", desc: "Fast, secure, and user-centric marketplace designed for high-volume retail traffic.", tags: ["Next.js", "Stripe", "Postgres"], img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=400&q=80" },
   ];
 
   const nextProject = () => setProjectIndex((prev) => (prev + 1) % Math.ceil(projects.length / 2));
