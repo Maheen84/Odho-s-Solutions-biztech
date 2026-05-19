@@ -1,0 +1,8 @@
+{
+  "name": "Odho's Solution",
+  "description": "A modern digital agency website featuring clean design, magenta accents, and professional service showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
