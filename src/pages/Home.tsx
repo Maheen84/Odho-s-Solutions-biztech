@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="py-[60px] px-[80px] bg-[#F5F5F5] my-[60px] mx-4 rounded-[16px] relative z-10">
+      <section className="py-10 px-6 md:py-[60px] md:px-[80px] bg-[#F5F5F5] my-10 md:my-[60px] mx-4 md:mx-6 rounded-[16px] relative z-10">
         <div className="container mx-auto">
           {/* Header */}
           <div className="portfolio-header">
@@ -134,11 +134,11 @@ export default function Home() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
             >
               {projects.slice(projectIndex * 2, projectIndex * 2 + 2).map((project, i) => (
-                <div key={i} className="bg-white rounded-[16px] p-7 flex gap-5 items-stretch shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-visible h-full">
+                <div key={i} className="bg-white rounded-[16px] p-5 md:p-7 flex flex-col sm:flex-row gap-5 items-stretch shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-visible h-full">
                   <div className="flex-1 flex flex-col gap-3 justify-between">
                     <div>
-                      <h3 className="text-[22px] font-bold text-black">{project.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed mt-1">{project.desc}</p>
+                      <h3 className="text-lg md:text-[22px] font-bold text-black">{project.title}</h3>
+                      <p className="text-gray-500 text-[13px] md:text-sm leading-relaxed mt-1">{project.desc}</p>
                     </div>
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {project.tags.map(tag => (
@@ -147,7 +147,7 @@ export default function Home() {
                     </div>
                     <p className="text-[#999] text-[11px] mt-2">{project.title} Website Design</p>
                   </div>
-                  <div className="flex-1 relative overflow-visible -mt-5 -mr-4 rotate-6 flex items-center justify-center">
+                  <div className="flex-1 relative overflow-visible sm:-mt-5 sm:-mr-4 sm:rotate-6 flex items-center justify-center mt-4 sm:mt-0">
                     <img src={project.img} alt={project.title} className="w-[180px] rounded-[10px] shadow-[8px_8px_24px_rgba(0,0,0,0.15)] object-cover" />
                   </div>
                 </div>
