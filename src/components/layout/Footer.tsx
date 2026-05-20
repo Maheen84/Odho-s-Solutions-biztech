@@ -4,29 +4,25 @@ import { ArrowUpRight, ArrowUp, Twitter, Facebook, Instagram, Youtube, Phone, Ma
 export default function Footer() {
   return (
     <footer className="footer">
-      {/* Left social icons */}
-      <div className="footer-socials">
-        <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
-        <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-        <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-        <a href="#" aria-label="Youtube"><Youtube size={18} /></a>
-      </div>
-
-      {/* Back to top */}
-      <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        Okay, enough scrolling... back to the top <ArrowUp size={13} />
-      </button>
-
-      <div className="footer-grid">
-        {/* CTA */}
-        <div className="footer-cta">
-          <h3>Do You Like<br />What You See?</h3>
-          <NavLink to="/contact" className="footer-btn">
-            Send A Project <ArrowUpRight size={15} />
-          </NavLink>
+      <div className="footer-inner">
+        {/* Left social icons */}
+        <div className="footer-socials">
+          <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
+          <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
+          <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+          <a href="#" aria-label="Youtube"><Youtube size={18} /></a>
         </div>
 
-        {/* Learn */}
+        <div className="footer-grid">
+          {/* CTA */}
+          <div className="footer-cta">
+            <h3>Do You Like<br />What You See?</h3>
+            <NavLink to="/contact" className="footer-btn">
+              Send A Project <ArrowUpRight size={15} />
+            </NavLink>
+          </div>
+
+          {/* Learn */}
         <div className="footer-col">
           <div className="footer-col-label">Learn</div>
           <NavLink to="/about">About</NavLink>
@@ -47,11 +43,12 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="footer-col">
-          <div className="footer-col-label">Contact info</div>
-          <div className="footer-contact-item"><Phone size={16} /> 879803098059</div>
-          <div className="footer-contact-item"><Mail size={16} /> info@odhossolutions.com</div>
-          <div className="footer-contact-item"><MapPin size={16} /> 4903 Westpark Dr Ste 304B,<br />Houston, TX, 77063-5286,<br />United States</div>
+          <div className="footer-col footer-contact-col">
+            <div className="footer-col-label">Contact info</div>
+            <div className="footer-contact-item"><Phone size={16} /> 879803098059</div>
+            <div className="footer-contact-item"><Mail size={16} /> info@odhossolutions.com</div>
+            <div className="footer-contact-item"><MapPin size={16} /> 4903 Westpark Dr Ste 304B,<br />Houston, TX, 77063-5286,<br />United States</div>
+          </div>
         </div>
       </div>
 

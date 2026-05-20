@@ -16,8 +16,8 @@ export default function BlogDetail() {
 
       {/* Article Section */}
       <section className="py-12 bg-white px-4 md:px-8 lg:px-16">
-        <div className="container">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_320px] items-start">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-[minmax(0,1fr)_minmax(220px,280px)] gap-6 items-start">
             
             {/* Left Content */}
             <div>
@@ -124,23 +124,23 @@ export default function BlogDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-4 lg:space-y-8">
+            <div className="sticky top-16 space-y-4 lg:space-y-8 self-start">
                {/* Search */}
-               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Search Blog</h3>
+               <div className="p-3 lg:p-5 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm lg:text-base font-bold mb-3 text-white uppercase tracking-wider">Search Blog</h3>
                  <div className="relative">
                    <input 
                      type="text" 
                      placeholder="Search..." 
-                     className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-[16px] border border-white/10 focus:border-primary outline-none transition-all text-sm text-white placeholder-white/40"
+                     className="w-full pl-10 pr-3 py-2.5 bg-white/5 rounded-[16px] border border-white/10 focus:border-primary outline-none transition-all text-sm text-white placeholder-white/40"
                    />
                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />
                  </div>
                </div>
 
                {/* Table of Content */}
-               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Table Of Content</h3>
+               <div className="p-3 lg:p-5 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm lg:text-base font-bold mb-3 text-white uppercase tracking-wider">Table Of Content</h3>
                  <nav className="flex flex-col gap-2">
                     <a href="#introduction" onClick={(e) => { e.preventDefault(); document.getElementById('introduction')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Introduction</a>
                     <a href="#software" onClick={(e) => { e.preventDefault(); document.getElementById('software')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Software and Tools</a>
@@ -150,8 +150,8 @@ export default function BlogDetail() {
                </div>
 
                {/* Categories */}
-               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Categories</h3>
+               <div className="p-3 lg:p-5 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm lg:text-base font-bold mb-3 text-white uppercase tracking-wider">Categories</h3>
                  <div className="space-y-2">
                    {["UI/UX Design", "Research", "Presentation", "Product Design", "Tools & Software", "Case Studies"].map((cat, idx) => (
                      <NavLink 

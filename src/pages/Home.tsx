@@ -251,11 +251,12 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="testimonial-section">
-        <div className="testimonial-label">Testimonial</div>
-        <h2 className="testimonial-heading">Social Proof & Success Stories</h2>
-        <p className="testimonial-sub">Here's what our clients have to say after partnering us — real experiences, real results, and real stories behind the Search</p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="testimonial-label">Testimonial</div>
+          <h2 className="testimonial-heading">Social Proof & Success Stories</h2>
+          <p className="testimonial-sub">Here's what our clients have to say after partnering us — real experiences, real results, and real stories behind the Search</p>
 
-        <div className="relative max-w-4xl mx-auto mt-10">
+          <div className="relative max-w-4xl mx-auto mt-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={testIndex}
@@ -301,15 +302,17 @@ export default function Home() {
           <div className="text-white font-bold">4.9 / 5.0</div>
           <div className="trust-text">Trusted by <span>500+</span> Worldwide Clients</div>
         </div>
+        </div>
       </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="faq-left">
-          <div className="faq-label">FAQ</div>
-          <h2 className="faq-heading">Questions <span>Answers</span></h2>
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
+          <div className="faq-left">
+            <div className="faq-label">FAQ</div>
+            <h2 className="faq-heading">Questions <span>Answers</span></h2>
 
-          {[
+            {[
             { q: "What services do you offer?", a: "We design everything you need for your business: logos, websites, apps, product and marketing materials. Need a new brand? We'll create it. Want a website? We'll build it. Looking for marketing designs? We've got you covered." },
             { q: "How does the Monthly Retainer subscription work?", a: "You reserve ongoing design and development capacity each month with a predictable workflow and priority support." },
             { q: "What's your refund policy?", a: "We align on scope before work starts and handle concerns through clear checkpoints and transparent communication." },
@@ -330,12 +333,13 @@ export default function Home() {
               <div className="faq-answer">{faq.a}</div>
             </div>
           ))}
-        </div>
-        <div className="faq-right">
-          <div className="contact-card">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Avatar" className="contact-avatar" />
-            <div className="contact-text">Feel free to reach out <em>whenever</em> you have questions.</div>
-            <button className="ask-btn">Ask a question</button>
+          </div>
+          <div className="faq-right">
+            <div className="contact-card">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Avatar" className="contact-avatar" />
+              <div className="contact-text">Feel free to reach out <em>whenever</em> you have questions.</div>
+              <button className="ask-btn">Ask a question</button>
+            </div>
           </div>
         </div>
       </section>
