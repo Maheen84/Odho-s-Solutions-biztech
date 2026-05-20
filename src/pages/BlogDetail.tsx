@@ -17,10 +17,10 @@ export default function BlogDetail() {
       {/* Article Section */}
       <section className="py-12 bg-white px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-[minmax(0,1fr)_minmax(220px,280px)] gap-6 items-start">
+          <div className="grid grid-cols-[minmax(0,1fr)_minmax(180px,260px)] gap-6 items-start">
             
             {/* Left Content */}
-            <div>
+            <div className="min-w-0">
               <article className="blog-article">
                 <div className="text-center mb-10">
                   <time className="block text-[#e91e8c] font-extrabold text-xs uppercase tracking-[0.2em] mb-4">
@@ -124,7 +124,7 @@ export default function BlogDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="sticky top-16 space-y-4 lg:space-y-8 self-start">
+            <div className="space-y-4 lg:space-y-8 self-start sticky top-16">
                {/* Search */}
                <div className="p-3 lg:p-5 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
                  <h3 className="text-sm lg:text-base font-bold mb-3 text-white uppercase tracking-wider">Search Blog</h3>

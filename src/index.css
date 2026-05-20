@@ -297,35 +297,46 @@
 
 /* Footer */
 .footer { @apply bg-[#f9f9f9] pt-10 md:pt-16 relative z-10; }
-.footer-inner { @apply max-w-7xl mx-auto px-6 lg:px-16 grid gap-6; }
-.footer-socials { @apply col-span-full sm:col-span-2 lg:col-span-1 flex flex-row justify-center md:justify-start gap-6 p-6 border-b border-[#eee] sm:border-b-0 sm:border-r border-transparent mb-0; }
+.footer-inner { @apply max-w-7xl mx-auto px-6 lg:px-16 gap-6 items-start; display: grid; grid-template-columns: auto 1fr; }
+.footer-socials { @apply flex flex-col justify-start gap-4 p-6 border-r border-[#eee] border-transparent mb-0 max-w-[100px]; }
+.footer-socials a { @apply w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#eee] text-[#444] transition hover:bg-[#E8345A] hover:text-white; }
 .back-to-top { @apply absolute top-[20px] right-[30px] text-[12px] text-[#999] cursor-pointer hover:text-[#E8345A] font-normal flex items-center gap-1 transition-colors z-50 no-underline; }
 @media (max-width: 768px) {
   .back-to-top {
     @apply static flex justify-center text-center mt-4 mb-6 w-full;
   }
 }
-.footer-grid { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-10 md:pb-16 mt-8; }
-.footer-cta { @apply col-span-full sm:col-span-2 lg:col-span-1 flex flex-col gap-4; }
-.footer-cta h3 { @apply text-[22px] font-bold text-[#111] mb-4 leading-[1.3] normal-case; }
-.footer-btn { @apply bg-[#1a1a2e] text-white rounded-[50px] p-[11px_24px] text-[13px] font-semibold inline-flex items-center gap-2 cursor-pointer transition hover:bg-[#2e2e50] w-auto; }
+.footer-grid { @apply grid grid-cols-4 gap-6 pb-10 md:pb-16 mt-0; }
+.footer-cta { @apply col-span-1 flex flex-col gap-4; }
+.footer-cta h3 { @apply text-[18px] sm:text-[22px] font-bold text-[#111] mb-2 sm:mb-4 leading-[1.25] normal-case; }
+.footer-btn { @apply bg-[#1a1a2e] text-white rounded-[50px] p-[10px_18px] text-[12px] sm:text-[13px] font-semibold inline-flex items-center gap-2 cursor-pointer transition hover:bg-[#2e2e50] w-full sm:w-auto justify-center; }
 @media (max-width: 768px) {
-  .footer-grid { @apply grid-cols-1 gap-6 px-4 pb-8; }
-  .footer-cta { @apply col-span-1 items-center text-center; }
+  .footer-inner { @apply gap-4; display: grid; grid-template-columns: auto 1fr; }
+  .footer-socials { @apply p-4 gap-3 max-w-[80px]; }
+  .footer-grid { @apply grid-cols-4 gap-3 pb-6 mt-0; }
+  .footer-cta { @apply col-span-1 items-start text-left; }
   .footer-contact-col { @apply col-span-1; }
-  .footer-col { @apply text-center; }
-  .footer-col a { @apply mx-auto; }
-  .footer-contact-item { @apply items-center justify-center; }
-  .footer-socials { @apply justify-center flex-row flex-wrap p-4 mb-0; }
+  .footer-col { @apply text-left; }
+  .footer-col a { @apply mx-0 text-[12px]; }
+  .footer-contact-item { @apply items-start justify-start text-[12px]; }
+  .footer-socials a { @apply w-9 h-9; }
   .footer-bottom { @apply px-4 text-center; }
   .footer-bottom-top { @apply flex-col items-center text-center gap-2; }
-  .footer-cta h3 { @apply text-[20px]; }
+  .footer-cta h3 { @apply text-[16px]; }
 }
 .footer-col-label { @apply text-[11px] text-[#999] uppercase tracking-[2px] mb-[12px]; }
 .footer-col a { @apply block text-[13px] text-[#444] mb-[10px] transition hover:text-[#E8345A]; }
 .new-badge { @apply bg-[#E8345A] text-white text-[9px] font-bold p-[2px_6px] rounded-[4px] ml-[6px] align-middle; }
 .footer-contact-item { @apply flex items-start gap-2.5 text-[13px] text-[#444] mb-[10px]; }
 .footer-contact-item svg { @apply text-[#E8345A] mt-[2px] flex-none; }
+
+/* Blog detail mobile refinement */
+.blog-article .prose { overflow-wrap: break-word; word-break: normal; white-space: normal; max-width: 100%; }
+.blog-article .prose p, .blog-article .prose li, .blog-article .prose blockquote { margin: 0; }
+.blog-article .prose h3 { @apply text-2xl md:text-[2rem] font-black tracking-tight; }
+.blog-article .prose ul { @apply list-disc pl-5; }
+.blog-article .prose img { @apply rounded-[24px] w-full; }
+
 .footer-tagline { @apply text-[8vw] lg:text-[80px] font-normal italic text-[#E8345A] leading-[1.1] text-center w-full mt-8; }
 .footer-bottom { @apply flex flex-col items-center text-center gap-2 border-t border-[#eee] mt-8 p-4 px-4 md:px-8 lg:px-16 text-[12px] text-[#aaa]; }
 .footer-bottom-top { @apply flex flex-col md:flex-row justify-between items-center gap-3 w-full; }
