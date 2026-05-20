@@ -59,22 +59,24 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-left">
-          <h1 className="hero-heading">We Drive Growth To Your Business <TrendingUp className="hero-arrow-icon" /></h1>
-          <NavLink to="/contact" className="hero-btn hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Book A Call <ArrowUpRight size={16} /></NavLink>
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85" alt="Team" className="hero-image" />
-        </div>
-        <div className="hero-right">
-          <p className="hero-desc">Elevating Your Digital Presence With Purpose-Driven Design And Powerful Development.</p>
-          <div className="stat-cards">
-            <div className="stat-card-purple">
-              <h3>1.2M+</h3>
-              <p>Users Have Interacted With Website Built By Us.</p>
-            </div>
-            <div className="stat-card-pink">
-              <h3>$3M</h3>
-              <p>In Funding Raised By Start Ups We've Worked With.</p>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="hero-left">
+            <h1 className="hero-heading">We Drive Growth To Your Business <TrendingUp className="hero-arrow-icon" /></h1>
+            <NavLink to="/contact" className="hero-btn hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200 inline-flex mt-6">Book A Call <ArrowUpRight size={16} /></NavLink>
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85" alt="Team" className="hero-image mt-10" />
+          </div>
+          <div className="hero-right max-w-sm mx-auto lg:mx-0">
+            <p className="hero-desc">Elevating Your Digital Presence With Purpose-Driven Design And Powerful Development.</p>
+            <div className="stat-cards grid gap-4 mt-8">
+              <div className="stat-card-purple">
+                <h3>1.2M+</h3>
+                <p>Users Have Interacted With Website Built By Us.</p>
+              </div>
+              <div className="stat-card-pink">
+                <h3>$3M</h3>
+                <p>In Funding Raised By Start Ups We've Worked With.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-24 bg-transparent">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="min-h-[280px] md:h-[430px] rounded-2xl bg-soft overflow-hidden shadow-custom relative">
             <img 
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=85" 
@@ -113,8 +115,8 @@ export default function Home() {
       </section>
 
       {/* Portfolio Showcase */}
-      <section className="py-10 px-6 md:py-[60px] md:px-[80px] bg-[#F5F5F5] my-10 md:my-[60px] mx-4 md:mx-6 rounded-[16px] relative z-10">
-        <div className="container mx-auto">
+      <section className="py-10 bg-[#F5F5F5] my-10 md:my-[60px] mx-0 rounded-[16px] relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
           {/* Header */}
           <div className="portfolio-header">
             <small className="text-[#999] text-[13px] uppercase tracking-wider font-semibold">Portfolio</small>
@@ -167,8 +169,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 bg-[#4A2C6E] text-white mx-4 rounded-[16px] relative z-10">
-        <div className="container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <section className="py-12 bg-[#4A2C6E] text-white mx-0 rounded-[16px] relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           
           {/* Col 1 */}
           <div className="flex flex-col gap-6">
@@ -221,27 +223,29 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section className="why-section">
-        <div className="why-left">
-          <h2>Why Our Clients Choose Us As Partners</h2>
-          <div className="why-divider" />
-          <NavLink to="/contact" className="book-btn">
-            Book A Call <ArrowUpRight size={16} />
-          </NavLink>
-        </div>
-        <div className="why-grid">
-          {[
-            { title: "Expertise & Specialization", desc: "Access to a team with expertise in various marketing disciplines, ensuring your campaigns are well rounded and effective" },
-            { title: "Fresh Perspectives", desc: "We bring an outsider's perspective to your brand. This fresh perspective can help you stay ahead of competitors and adapt to changing market trends." },
-            { title: "Scalability and Flexibility", desc: "Whether you're a small startup or a large corporation, we can help you scale your services to meet your needs." },
-            { title: "Resource Optimization", desc: "Instead of hiring and training an in-house team, you can tap into the agency's existing infrastructure, saving both time and money." }
-          ].map((item) => (
-            <div key={item.title} className="why-card">
-              <div className="why-icon"></div>
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
+      <section className="py-16 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-10">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-black">Why Our Clients Choose Us As Partners</h2>
+              <div className="why-divider mt-4" />
             </div>
-          ))}
+            <NavLink to="/contact" className="book-btn self-start">Book A Call <ArrowUpRight size={16} /></NavLink>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { title: "Expertise & Specialization", desc: "Access to a team with expertise in various marketing disciplines, ensuring your campaigns are well rounded and effective" },
+              { title: "Fresh Perspectives", desc: "We bring an outsider's perspective to your brand. This fresh perspective can help you stay ahead of competitors and adapt to changing market trends." },
+              { title: "Scalability and Flexibility", desc: "Whether you're a small startup or a large corporation, we can help you scale your services to meet your needs." },
+              { title: "Resource Optimization", desc: "Instead of hiring and training an in-house team, you can tap into the agency's existing infrastructure, saving both time and money." }
+            ].map((item) => (
+              <div key={item.title} className="why-card">
+                <div className="why-icon"></div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

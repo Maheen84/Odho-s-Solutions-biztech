@@ -58,7 +58,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-top">
           <span>© DHo's Solution Ltd 2026</span>
-          <div style={{ display: 'flex', gap: '16px' }}>
+          <div className="footer-bottom-links">
             <a href="#">Web Design</a>
             <span>|</span>
             <a href="#">Privacy Policy</a>

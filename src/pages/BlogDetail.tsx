@@ -15,12 +15,12 @@ export default function BlogDetail() {
       />
 
       {/* Article Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white px-4 md:px-8 lg:px-16">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_320px] items-start">
             
             {/* Left Content */}
-            <div className="md:col-span-8">
+            <div>
               <article className="blog-article">
                 <div className="text-center mb-10">
                   <time className="block text-[#e91e8c] font-extrabold text-xs uppercase tracking-[0.2em] mb-4">
@@ -124,40 +124,40 @@ export default function BlogDetail() {
             </div>
 
             {/* Sidebar */}
-            <div className="md:col-span-4 space-y-8 md:sticky md:top-24">
+            <div className="space-y-4 lg:space-y-8">
                {/* Search */}
-               <div className="p-8 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-base font-bold mb-6 text-white uppercase tracking-wider">Search Blog</h3>
+               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Search Blog</h3>
                  <div className="relative">
                    <input 
                      type="text" 
                      placeholder="Search..." 
-                     className="w-full pl-12 pr-6 py-4 bg-white/5 rounded-[16px] border border-white/10 focus:border-primary outline-none transition-all text-sm text-white placeholder-white/40"
+                     className="w-full pl-10 pr-4 py-3 bg-white/5 rounded-[16px] border border-white/10 focus:border-primary outline-none transition-all text-sm text-white placeholder-white/40"
                    />
-                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" size={18} />
+                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" size={18} />
                  </div>
                </div>
 
                {/* Table of Content */}
-               <div className="p-8 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-base font-bold mb-6 text-white uppercase tracking-wider">Table Of Content</h3>
-                 <nav className="flex flex-col gap-1">
-                    <a href="#introduction" onClick={(e) => { e.preventDefault(); document.getElementById('introduction')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2.5 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Introduction</a>
-                    <a href="#software" onClick={(e) => { e.preventDefault(); document.getElementById('software')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2.5 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Software and Tools</a>
-                    <a href="#resources" onClick={(e) => { e.preventDefault(); document.getElementById('resources')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2.5 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Other Resources</a>
-                    <a href="#conclusion" onClick={(e) => { e.preventDefault(); document.getElementById('conclusion')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2.5 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Conclusion</a>
+               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Table Of Content</h3>
+                 <nav className="flex flex-col gap-2">
+                    <a href="#introduction" onClick={(e) => { e.preventDefault(); document.getElementById('introduction')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Introduction</a>
+                    <a href="#software" onClick={(e) => { e.preventDefault(); document.getElementById('software')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Software and Tools</a>
+                    <a href="#resources" onClick={(e) => { e.preventDefault(); document.getElementById('resources')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Other Resources</a>
+                    <a href="#conclusion" onClick={(e) => { e.preventDefault(); document.getElementById('conclusion')?.scrollIntoView({behavior: 'smooth'}) }} className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-colors">Conclusion</a>
                  </nav>
                </div>
 
                {/* Categories */}
-               <div className="p-8 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
-                 <h3 className="text-base font-bold mb-6 text-white uppercase tracking-wider">Categories</h3>
-                 <div className="space-y-1">
+               <div className="p-4 lg:p-6 bg-[#1a1035] border border-transparent rounded-[24px] shadow-lg text-white">
+                 <h3 className="text-sm font-bold mb-4 text-white uppercase tracking-wider">Categories</h3>
+                 <div className="space-y-2">
                    {["UI/UX Design", "Research", "Presentation", "Product Design", "Tools & Software", "Case Studies"].map((cat, idx) => (
                      <NavLink 
                        key={idx} 
                        to={`/blog?category=${cat}`} 
-                       className="block p-3 rounded-[12px] text-white/70 hover:text-white hover:bg-white/5 transition-all font-semibold text-sm"
+                       className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-all"
                      >
                        {cat}
                      </NavLink>

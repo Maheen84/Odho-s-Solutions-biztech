@@ -24,7 +24,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative flex flex-col min-h-screen">
+      <div className="relative flex flex-col min-h-screen overflow-x-hidden">
         {/* Global Watermark */}
         <div className="fixed inset-0 pointer-events-none z-[9999] flex items-center justify-center overflow-hidden mix-blend-multiply">
           <span className="text-[4vw] md:text-[5vw] font-black text-black opacity-10 whitespace-nowrap -rotate-12 select-none">
