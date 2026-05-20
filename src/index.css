@@ -34,7 +34,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1180px] mx-auto px-6;
+    @apply max-w-7xl mx-auto px-6;
   }
 
   .dash-label {
@@ -74,7 +74,7 @@
   box-shadow: 0 2px 16px rgba(0,0,0,0.05);
 }
 .navbar-inner {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 14px 24px;
   display: flex;
@@ -82,6 +82,12 @@
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+}
+@media (min-width: 1024px) {
+  .navbar-inner {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
 .navbar-logo {
   display: flex;
@@ -291,7 +297,7 @@
 
 /* Footer */
 .footer { @apply bg-[#f9f9f9] pt-10 md:pt-16 relative z-10; }
-.footer-inner { @apply max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid gap-6; }
+.footer-inner { @apply max-w-7xl mx-auto px-6 lg:px-16 grid gap-6; }
 .footer-socials { @apply col-span-full sm:col-span-2 lg:col-span-1 flex flex-row justify-center md:justify-start gap-6 p-6 border-b border-[#eee] sm:border-b-0 sm:border-r border-transparent mb-0; }
 .back-to-top { @apply absolute top-[20px] right-[30px] text-[12px] text-[#999] cursor-pointer hover:text-[#E8345A] font-normal flex items-center gap-1 transition-colors z-50 no-underline; }
 @media (max-width: 768px) {
@@ -304,9 +310,12 @@
 .footer-cta h3 { @apply text-[22px] font-bold text-[#111] mb-4 leading-[1.3] normal-case; }
 .footer-btn { @apply bg-[#1a1a2e] text-white rounded-[50px] p-[11px_24px] text-[13px] font-semibold inline-flex items-center gap-2 cursor-pointer transition hover:bg-[#2e2e50] w-auto; }
 @media (max-width: 768px) {
-  .footer-grid { @apply grid-cols-2 gap-6 px-4 pb-8; }
-  .footer-cta { @apply col-span-2 items-center text-center; }
-  .footer-contact-col { @apply col-span-2; }
+  .footer-grid { @apply grid-cols-1 gap-6 px-4 pb-8; }
+  .footer-cta { @apply col-span-1 items-center text-center; }
+  .footer-contact-col { @apply col-span-1; }
+  .footer-col { @apply text-center; }
+  .footer-col a { @apply mx-auto; }
+  .footer-contact-item { @apply items-center justify-center; }
   .footer-socials { @apply justify-center flex-row flex-wrap p-4 mb-0; }
   .footer-bottom { @apply px-4 text-center; }
   .footer-bottom-top { @apply flex-col items-center text-center gap-2; }
