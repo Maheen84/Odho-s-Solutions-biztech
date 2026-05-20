@@ -313,16 +313,31 @@
 @media (max-width: 768px) {
   .footer-inner { @apply gap-4; display: grid; grid-template-columns: auto 1fr; }
   .footer-socials { @apply p-4 gap-3 max-w-[80px]; }
-  .footer-grid { @apply grid-cols-4 gap-3 pb-6 mt-0; }
-  .footer-cta { @apply col-span-1 items-start text-left; }
-  .footer-contact-col { @apply col-span-1; }
-  .footer-col { @apply text-left; }
-  .footer-col a { @apply mx-0 text-[12px]; }
-  .footer-contact-item { @apply items-start justify-start text-[12px]; }
+  .footer-grid { @apply gap-3 pb-6 mt-0; display:grid; grid-template-columns: repeat(4, minmax(90px,1fr)); }
+  .footer-cta { @apply col-span-1 items-start text-left min-w-[140px]; }
+  .footer-contact-col { @apply col-span-1 min-w-[130px]; }
+  .footer-col { @apply text-left min-w-[110px]; }
+  .footer-col a { @apply mx-0 text-[11px]; }
+  .footer-col-label { @apply text-[10px] mb-[8px]; }
+  .footer-contact-item { @apply items-start justify-start text-[11px]; word-break: break-word; white-space: normal; }
   .footer-socials a { @apply w-9 h-9; }
+  .footer-btn { @apply w-full; }
   .footer-bottom { @apply px-4 text-center; }
   .footer-bottom-top { @apply flex-col items-center text-center gap-2; }
   .footer-cta h3 { @apply text-[16px]; }
+}
+
+@media (max-width: 520px) {
+  .footer-inner { @apply gap-4; display:grid; grid-template-columns: 1fr; }
+  .footer-socials { @apply flex-row justify-center border-r-0 border-b border-[#eee] p-4 max-w-full w-full; }
+  .footer-grid { @apply grid-cols-2 gap-3 pb-6 mt-0; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .footer-cta { @apply col-span-2 items-start text-left w-full; }
+  .footer-contact-col { @apply col-span-2; }
+  .footer-col { @apply text-left; }
+  .footer-col a { @apply mx-0 text-[11px]; }
+  .footer-contact-item { @apply items-start justify-start text-[11px]; }
+  .footer-bottom { @apply px-4 text-center; }
+  .footer-bottom-top { @apply flex-col items-center text-center gap-2; }
 }
 .footer-col-label { @apply text-[11px] text-[#999] uppercase tracking-[2px] mb-[12px]; }
 .footer-col a { @apply block text-[13px] text-[#444] mb-[10px] transition hover:text-[#E8345A]; }
@@ -336,6 +351,15 @@
 .blog-article .prose h3 { @apply text-2xl md:text-[2rem] font-black tracking-tight; }
 .blog-article .prose ul { @apply list-disc pl-5; }
 .blog-article .prose img { @apply rounded-[24px] w-full; }
+
+@media (max-width: 768px) {
+  .blog-detail-grid { display: block !important; width: 100% !important; }
+  .blog-detail-article, .blog-detail-sidebar { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+  .blog-detail-sidebar { position: static !important; top: auto !important; left: auto !important; right: auto !important; }
+  .blog-detail-article .prose { width: 100% !important; max-width: 100% !important; }
+  .blog-detail-article .prose p { word-break: normal !important; overflow-wrap: break-word !important; white-space: normal !important; }
+  .blog-detail-sidebar { margin-top: 1.5rem; }
+}
 
 .footer-tagline { @apply text-[8vw] lg:text-[80px] font-normal italic text-[#E8345A] leading-[1.1] text-center w-full mt-8; }
 .footer-bottom { @apply flex flex-col items-center text-center gap-2 border-t border-[#eee] mt-8 p-4 px-4 md:px-8 lg:px-16 text-[12px] text-[#aaa]; }
