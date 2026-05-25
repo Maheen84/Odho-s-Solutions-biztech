@@ -1,9 +1,10 @@
-import { ArrowUpRight, Check, Quote, ArrowRight, ArrowLeft, Play } from "lucide-react";
+import { Check, Quote, ArrowLeft, Play } from "lucide-react";
 import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 import { useState, useRef } from "react";
 import CtaBanner from "../components/CtaBanner";
 import PageHero from "../components/PageHero";
+import CtaArrow from "../components/CtaArrow";
 
 export default function About() {
   const [activeService, setActiveService] = useState('UI/UX Design');
@@ -58,8 +59,8 @@ export default function About() {
               Since our founding, we have been committed to more than just building websites. We design and develop holistic digital experiences from sleek web and mobile apps to impactful branding, animations, content and marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand.
             </p>
             <div className="about-btns">
-              <NavLink to="/contact" className="btn btn-dark hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200" style={{ textTransform: 'none', letterSpacing: 'normal', fontSize: '14px', borderRadius: '50px', padding: '12px 28px' }}>Get Started Now ↗</NavLink>
-              <NavLink to="/contact" className="btn btn-outline hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200" style={{ textTransform: 'none', letterSpacing: 'normal', fontSize: '14px', borderRadius: '50px', padding: '12px 28px' }}>Book A Call</NavLink>
+              <NavLink to="/contact" className="btn btn-dark hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Get Started Now <CtaArrow /></NavLink>
+              <NavLink to="/contact" className="btn btn-outline hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Book A Call <CtaArrow /></NavLink>
             </div>
           </div>
         </section>
@@ -193,7 +194,7 @@ export default function About() {
                   <ArrowLeft size={16} color="#111" />
                 </button>
                 <button onClick={scrollRight} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
-                  <ArrowRight size={16} color="#111" />
+                  <CtaArrow />
                 </button>
               </div>
             </div>

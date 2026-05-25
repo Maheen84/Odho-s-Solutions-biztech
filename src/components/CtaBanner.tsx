@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import CtaArrow from "./CtaArrow";
+
 
 export default function CtaBanner() {
   return (
@@ -12,7 +13,7 @@ export default function CtaBanner() {
             <h2 className="cta-banner-heading">Start Your Next Project<br />With Us</h2>
             <div className="cta-banner-actions">
               <NavLink to="/contact" className="cta-banner-btn">
-                Get Started Now <ArrowUpRight size={16} />
+                Get Started Now <CtaArrow />
               </NavLink>
               <div className="cta-banner-avatars">
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="" />
@@ -30,7 +31,7 @@ export default function CtaBanner() {
               </div>
               <p className="cta-banner-card-text">Ready to bring your vision to life? Let's build something great together.</p>
               <NavLink to="/contact" className="cta-banner-card-btn">
-                Get In Touch <ArrowUpRight size={14} />
+                Get In Touch <CtaArrow />
               </NavLink>
             </div>
           </div>

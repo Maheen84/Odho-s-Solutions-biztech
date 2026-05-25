@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -42,7 +42,8 @@ export default function Navbar() {
 
         {/* CTA */}
         <NavLink to="/contact" className="navbar-cta">
-          Hire Us <ArrowUpRight size={14} />
+          Hire Us
+          <span className="navbar-cta-icon"><ArrowUpRight size={14} /></span>
         </NavLink>
 
         {/* Mobile Toggle */}
@@ -67,7 +68,8 @@ export default function Navbar() {
             </NavLink>
           ))}
           <NavLink to="/contact" className="navbar-cta mt-2" onClick={() => setMobileOpen(false)}>
-            Hire Us <ArrowUpRight size={14} />
+            Hire Us
+            <span className="navbar-cta-icon"><ArrowUpRight size={14} /></span>
           </NavLink>
         </div>
       )}

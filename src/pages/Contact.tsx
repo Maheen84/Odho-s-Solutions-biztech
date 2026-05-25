@@ -1,7 +1,8 @@
-import { ArrowUpRight, Mail, Phone, MapPin, Globe, Facebook, Instagram, Youtube, Share2 } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, Facebook, Instagram, Youtube, Share2 } from "lucide-react";
 import { useState } from "react";
 import CtaBanner from "../components/CtaBanner";
 import PageHero from "../components/PageHero";
+import CtaArrow from "../components/CtaArrow";
 
 function TikTokIcon({ size = 20 }: { size?: number }) {
   return (
@@ -143,7 +144,7 @@ export default function Contact() {
                   </div>
                   <div className="cf-submit-row">
                     <button type="submit" className="cf-submit-btn">
-                      Send Message <ArrowUpRight size={16} />
+                      Send Message <CtaArrow />
                     </button>
                   </div>
                 </form>

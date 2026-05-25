@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { ArrowUpRight, ArrowUp, Twitter, Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowUp, Twitter, Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import CtaArrow from "../CtaArrow";
 
 export default function Footer() {
   return (
@@ -18,7 +19,7 @@ export default function Footer() {
           <div className="footer-cta">
             <h3>Do You Like<br />What You See?</h3>
             <NavLink to="/contact" className="footer-btn">
-              Send A Project <ArrowUpRight size={15} />
+              Send A Project <CtaArrow />
             </NavLink>
           </div>
 

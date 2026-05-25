@@ -1,10 +1,11 @@
 import { useParams, NavLink } from "react-router-dom";
 import { 
-  ArrowUpRight, Zap, Inbox, BarChart3, Users, UserCheck, Monitor, HelpCircle, 
+  Zap, Inbox, BarChart3, Users, UserCheck, Monitor, HelpCircle, 
   Palette, Laptop, Code, CheckCircle2, Globe, Shield, RefreshCw, Layers, Check, Cpu 
 } from "lucide-react";
 import PageHero from "../components/PageHero";
 import CtaBanner from "../components/CtaBanner";
+import CtaArrow from "../components/CtaArrow";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -190,7 +191,7 @@ export default function ServiceDetail() {
                     We don't build generic websites. Here at Odho's Solutions, we understand all aspects of a custom website, from research to web development and hosting, so UX Design. We tailor our services to the client and the project requirements.
                   </p>
                   <NavLink to="/contact" className="inline-flex items-center gap-3 bg-primary text-white font-bold py-3 px-8 rounded-full text-xs uppercase tracking-wider hover:bg-primary/95 transition-all">
-                    Book A Call Today <ArrowUpRight size={16} />
+                    Book A Call Today <CtaArrow />
                   </NavLink>
                 </div>
                 <div className="lg:col-span-6 flex justify-center">
@@ -238,7 +239,7 @@ export default function ServiceDetail() {
                   </h2>
                 </div>
                 <NavLink to="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
-                  Get In Touch Today
+                  Get In Touch Today <CtaArrow />
                 </NavLink>
               </div>
 
@@ -286,8 +287,8 @@ export default function ServiceDetail() {
                     Manage customer data, track analytics, view sales pipelines, build custom campaigns, and more. Empower your sales & support teams to close deals faster and keep customer data secure.
                   </p>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now</NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call</NavLink>
+                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
+                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
                   </div>
                 </div>
 
@@ -409,7 +410,7 @@ export default function ServiceDetail() {
                       ))}
                     </ul>
                     <NavLink to="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
-                      Choose Plan
+                      Choose Plan <CtaArrow />
                     </NavLink>
                   </article>
                 ))}
@@ -549,8 +550,8 @@ export default function ServiceDetail() {
                     ))}
                   </ul>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now</NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call</NavLink>
+                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
+                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
                   </div>
                 </div>
 
@@ -652,8 +653,8 @@ export default function ServiceDetail() {
                     ))}
                   </ul>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now</NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call</NavLink>
+                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
+                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
                   </div>
                 </div>
               </div>
@@ -679,8 +680,8 @@ export default function ServiceDetail() {
                     Fusion Sync where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
                   </p>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now</NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call</NavLink>
+                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
+                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
                   </div>
                 </div>
                 <div className="lg:col-span-6 flex justify-center">
@@ -707,7 +708,7 @@ export default function ServiceDetail() {
                   </h2>
                 </div>
                 <NavLink to="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
-                  Get In Touch Today
+                  Get In Touch Today <CtaArrow />
                 </NavLink>
               </div>
 
@@ -757,7 +758,7 @@ export default function ServiceDetail() {
                     <p className="text-white/80 text-sm leading-relaxed mb-6 flex-grow">{card.desc}</p>
                     <div className="flex justify-between items-center mt-auto">
                       <button className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white hover:text-[#E8345A] transition-colors">
-                        <ArrowUpRight size={18} />
+                        <CtaArrow />
                       </button>
                     </div>
                   </div>

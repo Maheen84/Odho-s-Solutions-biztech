@@ -1,8 +1,9 @@
-import { ArrowUpRight, X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import CtaBanner from "../components/CtaBanner";
+import CtaArrow from "../components/CtaArrow";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -59,16 +60,29 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <section className="hero-section-home">
+        <div className="hero-grid">
           <div className="hero-left">
-            <h1 className="hero-heading">We Drive Growth To Your Business <TrendingUp className="hero-arrow-icon" /></h1>
-            <NavLink to="/contact" className="hero-btn hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200 inline-flex mt-6">Book A Call <ArrowUpRight size={16} /></NavLink>
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85" alt="Team" className="hero-image mt-10" />
+            <h1 className="hero-heading">
+              We Drive Growth To Your Business{" "}
+              <TrendingUp className="hero-arrow-icon" style={{display: 'inline', verticalAlign: 'middle'}} />
+            </h1>
+            <div className="hero-image-wrap relative">
+              <NavLink to="/contact" className="hero-btn hero-image-cta inline-flex">
+                Book A Call <CtaArrow />
+              </NavLink>
+              <img
+                src="/assets/bright-office-team-collaboration.jpeg"
+                alt="Team collaborating around an office table"
+                className="hero-image"
+              />
+            </div>
           </div>
-          <div className="hero-right max-w-sm mx-auto lg:mx-0">
-            <p className="hero-desc">Elevating Your Digital Presence With Purpose-Driven Design And Powerful Development.</p>
-            <div className="stat-cards grid gap-4 mt-8">
+          <div className="hero-right">
+            <p className="hero-desc">
+              Elevating Your Digital Presence With Purpose-Driven Design And Powerful Development.
+            </p>
+            <div className="stat-cards">
               <div className="stat-card-purple">
                 <h3>1.2M+</h3>
                 <p>Users Have Interacted With Website Built By Us.</p>
@@ -83,36 +97,51 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-transparent">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="min-h-[280px] md:h-[430px] rounded-2xl bg-soft overflow-hidden shadow-custom relative">
-            <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=85" 
-              alt="Team collaborating" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
-          <div>
-            <div className="dash-label mb-6">Who We Are</div>
-            <h2 className="mb-6">About Us</h2>
-            <p className="text-muted leading-[1.7] text-[15px] font-normal mb-6">
-              <span className="text-primary font-bold">
-                Odho's Solution
-              </span>
-              {' '}where creativity meets precision in digital transformation.
-            </p>
-            <p className="text-muted leading-[1.7] text-[15px] font-normal mb-8">
-              Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek 
-              <strong className="text-secondary font-bold">web and mobile apps</strong>
-              , to impactful branding, animations, content & marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand, connect with your audience, and thrive online.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <NavLink to="/about" className="btn btn-dark gap-2">About Odho's Solution <ArrowUpRight size={18} /></NavLink>
-              <NavLink to="/contact" className="btn btn-outline">Book a Call</NavLink>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* About Section */}
+      {/* About Section */}
+<section className="about-section-home">
+  <div className="max-w-7xl mx-auto px-6 lg:px-16 about-inner-grid" style={{position: 'relative', zIndex: 1}}>
+   {/* Deco left */}
+<img src="/assets/deco.png" alt="" style={{ 
+  position: 'absolute', 
+  left: '-120px',      // ← more negative to cut it off on left edge
+  top: '80px',        // ← use top instead of bottom, close to heading
+  width: '220px',     // ← slightly bigger
+  height: '220px', 
+  opacity: 0.12, 
+  transform: 'scaleX(-1)',
+  pointerEvents: 'none', 
+  zIndex: 0 
+}} />
+
+{/* Deco right - partially cut */}
+<img src="/assets/deco.png" alt="" style={{ 
+  position: 'absolute', 
+  right: '-60px', 
+  top: '200px',        // ← change bottom to top
+  width: '300px', 
+  height: '300px', 
+  opacity: 0.08, 
+  transform: 'scaleX(-1)',  // ← ADD THIS to mirror it horizontally
+  pointerEvents: 'none', 
+  zIndex: 0 
+}} />
+    <div>
+      <div className="about-label">Who We Are</div>
+      <h2 className="about-heading">About <span style={{color: '#999', fontWeight: 400}}>Us</span></h2>
+    </div>
+    <div>
+      <p className="about-desc-text">
+        <span style={{color: '#E8345A', fontFamily: 'Open Sans', fontWeight: 600}}>Odho's Solution</span>
+        {' '}where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek <strong>web and mobile apps</strong>, to impactful branding, animations, content & marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand, connect with your audience, and thrive online.
+      </p>
+      <div className="flex flex-wrap gap-4">
+        <NavLink to="/about" className="btn btn-dark gap-2">About Odho's Solution <CtaArrow /></NavLink>
+        <NavLink to="/contact" className="btn btn-outline">Book a Call</NavLink>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Portfolio Showcase */}
       <section className="py-10 bg-[#F5F5F5] my-10 md:my-[60px] mx-0 rounded-[16px] relative z-10">
@@ -208,14 +237,14 @@ export default function Home() {
               <p className="text-sm text-white/70">Ever wonder how design magic happens?</p>
               <div className="flex items-end justify-between mt-auto">
                 <h3 className="text-white font-extrabold text-[20px] leading-tight">See How We Work</h3>
-                <button className="w-8 h-8 rounded-full bg-[#ba1c53] flex items-center justify-center text-white"><ArrowUpRight size={16} /></button>
+                <button className="w-8 h-8 rounded-full bg-[#ba1c53] flex items-center justify-center text-white"><CtaArrow /></button>
               </div>
             </div>
             <div className="bg-[#E8345A] p-6 rounded-[12px] flex flex-col gap-2 h-full transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-black/20 cursor-pointer">
               <p className="text-sm text-white/80">Looking for design experts who can bring your vision to life?</p>
               <div className="flex items-end justify-between mt-auto">
                 <h3 className="text-white font-extrabold text-[20px] leading-tight">Meet Our Expert</h3>
-                <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8345A]"><ArrowUpRight size={16} /></button>
+                <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8345A]"><CtaArrow /></button>
               </div>
             </div>
           </div>
@@ -230,7 +259,7 @@ export default function Home() {
               <h2 className="text-3xl lg:text-4xl font-black">Why Our Clients Choose Us As Partners</h2>
               <div className="why-divider mt-4" />
             </div>
-            <NavLink to="/contact" className="book-btn self-start">Book A Call <ArrowUpRight size={16} /></NavLink>
+            <NavLink to="/contact" className="book-btn self-start">Book A Call <CtaArrow /></NavLink>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[

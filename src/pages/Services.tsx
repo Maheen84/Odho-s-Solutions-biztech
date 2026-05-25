@@ -1,7 +1,8 @@
-import { ArrowUpRight, Check, Monitor, Layout, Cpu, Smartphone, Settings, BarChart3 } from "lucide-react";
+import { Check, Monitor, Layout, Cpu, Smartphone, Settings, BarChart3 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import CtaBanner from "../components/CtaBanner";
+import CtaArrow from "../components/CtaArrow";
 
 export default function Services() {
   const categories = [
@@ -33,7 +34,7 @@ export default function Services() {
               <div className="dash-label mb-6">What we offer</div>
               <h2 className="text-4xl md:text-5xl leading-tight">A Team of Experts That Can Build A Website You're Proud Of</h2>
             </div>
-            <NavLink to="/contact" className="btn btn-dark gap-2">Get In Touch Today <ArrowUpRight size={18}/></NavLink>
+            <NavLink to="/contact" className="btn btn-dark gap-2">Get In Touch Today <CtaArrow /></NavLink>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -45,7 +46,7 @@ export default function Services() {
                 <h3 className="text-2xl font-black mb-4">{cat.title}</h3>
                 <p className="text-muted leading-relaxed mb-6">{cat.desc}</p>
                 <div className="text-primary font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                   Learn More <ArrowUpRight size={16} />
+                   Learn More <CtaArrow />
                 </div>
               </NavLink>
             ))}
@@ -108,7 +109,7 @@ export default function Services() {
                   ))}
                 </ul>
                 <NavLink to="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
-                  Choose Plan
+                  Choose Plan <CtaArrow />
                 </NavLink>
               </article>
             ))}

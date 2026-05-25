@@ -1,8 +1,9 @@
-import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
 import { NavLink, useSearchParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import CtaBanner from "../components/CtaBanner";
+import CtaArrow from "../components/CtaArrow";
 
 export default function Blog() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -153,7 +154,7 @@ export default function Blog() {
                     </span>
                     <h3 className="text-xl font-black mb-3 flex items-start justify-between gap-4 group">
                       <NavLink to={`/blog/${post.slug}`} className="hover:text-[#e91e8c] transition-colors line-clamp-2 uppercase">{post.title}</NavLink>
-                      <ArrowUpRight className="text-secondary group-hover:text-[#e91e8c] transition-colors shrink-0 mt-1" size={24} />
+                      <CtaArrow />
                     </h3>
                     <p className="text-muted text-sm leading-relaxed mb-6 line-clamp-2">
                       How do you create compelling presentations that wow your colleagues and impress your managers?
@@ -175,7 +176,7 @@ export default function Blog() {
           {totalPages > 1 && (
             <nav className="flex items-center justify-center gap-2 mt-20 text-sm font-semibold text-muted">
                <button onClick={handlePrevPage} disabled={currentPage === 1} className="flex items-center gap-2 px-3 py-1 hover:text-[#e91e8c] transition-colors disabled:opacity-50 disabled:hover:text-muted">
-                 <ArrowRight className="rotate-180" size={16} /> Previous
+                 <CtaArrow /> Previous
                </button>
                
                {Array.from({ length: totalPages }).map((_, i) => {
@@ -195,7 +196,7 @@ export default function Blog() {
                })}
                
                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="flex items-center gap-2 px-3 py-1 hover:text-[#e91e8c] transition-colors bg-transparent border-none disabled:opacity-50 disabled:hover:text-muted">
-                 Next <ArrowRight size={16} />
+                 Next <CtaArrow />
                </button>
             </nav>
           )}

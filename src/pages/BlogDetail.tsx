@@ -1,4 +1,4 @@
-import { Search, ArrowUpRight, Copy, Facebook, Instagram, Twitter, Linkedin, Globe } from "lucide-react";
+import { Search, Copy, Facebook, Instagram, Twitter, Linkedin, Globe } from "lucide-react";
 import { NavLink, useParams } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import CtaBanner from "../components/CtaBanner";
