@@ -1,4 +1,4 @@
-import { X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -9,18 +9,19 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [projectIndex, setProjectIndex] = useState(0);
   const [testIndex, setTestIndex] = useState(0);
+  const [activeService, setActiveService] = useState("web-design");
 
   const testimonials = [
     {
-      quote: "Working with BizTech was a absolute game-changer. Their expertise enabled us to streamline our marketing and see a 40% growth in leads within just three months.",
-      name: "Sarah Jenkins",
-      role: "CMO, BrightSpark Systems",
+      quote: "Michael Markos is amazing! I couldn't be happier with the guidance and support that she has provided me through this process and I definitely couldn't have done it without her. Thank you and Michael so much.",
+      name: "Kyle Weznick",
+      role: "Lorem ipsum dolor",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
-      project: "Brand Identity Revamp",
-      projectImg: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80"
+      project: "Regal Event Company",
+      projectImg: "/assets/regal event image card.png"
     },
     {
-      quote: "The personalized approach is what sets them apart. They didn't just provide a solution; they partnered with us to evolve our brand’s digital presence.",
+      quote: "The personalized approach is what sets them apart. They didn't just provide a solution; they partnered with us to evolve our brand's digital presence.",
       name: "Michael Chen",
       role: "Founder, PeakGrowth",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
@@ -41,21 +42,74 @@ export default function Home() {
   const prevTest = () => setTestIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   const services = [
-    { id: "01", title: "Web Design & Development", desc: "Research-led interfaces, responsive frontend development, scalable backend architecture.", slug: "web-design" },
-    { id: "02", title: "CRM", desc: "Empower your business with tailored Customer Relationship Management.", slug: "crm" },
-    { id: "03", title: "AI Automation", desc: "Leverage AI-driven processes to minimize manual work and increase efficiency.", slug: "ai-automation" },
-    { id: "04", title: "POS / Project Management", desc: "Streamline sales and organize projects effectively.", slug: "pos" },
+    {
+      id: "01",
+      title: "Web Design & Development",
+      desc: "Research-led interfaces, responsive frontend development, scalable backend architecture.",
+      slug: "web-design",
+    },
+    {
+      id: "02",
+      title: "CRM",
+      desc: "Empower your business with tailored Customer Relationship Management.",
+      slug: "crm",
+    },
+    {
+      id: "03",
+      title: "AI Automation",
+      desc: "Leverage AI-driven processes to minimize manual work and increase efficiency.",
+      slug: "ai-automation",
+    },
+    {
+      id: "04",
+      title: "POS / Project Management",
+      desc: "Streamline sales and organize projects effectively.",
+      slug: "pos",
+    },
   ];
 
   const projects = [
-    { title: "Regal Event Company", desc: "Enterprise event planning platform with seamless booking and interactive maps.", tags: ["Ecommerce", "WordPress", "SEO", "Hosting"], img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" },
-    { title: "TechPortal Analytics", desc: "Modern analytics dashboard providing real-time data insights and performance reports.", tags: ["React", "Dashboard", "API"], img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" },
-    { title: "HealthTrack Pro", desc: "Personalized wellness app tracking activity, nutrition, and vital health metrics.", tags: ["Mobile", "Flutter", "Firebase"], img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80" },
-    { title: "ShopSwift E-com", desc: "Fast, secure, and user-centric marketplace designed for high-volume retail traffic.", tags: ["Next.js", "Stripe", "Postgres"], img: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=400&q=80" },
+    {
+      logo: "/assets/WhatsApp Image 2026-05-15 at 9.44.39 PM.jpeg",
+      title: "Regal Event Company",
+      desc: "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Adipiscing Elit...",
+      tags: ["Ecommerce Website", "WordPress Website", "SEO/Hosting", "Ecommerce Website"],
+      sub: "Regal Event company Website Design",
+      img: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
+      bgImg: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
+    },
+    {
+      logo: "/assets/WhatsApp Image 2026-05-15 at 9.44.39 PM.jpeg",
+      title: "Regal Event Company",
+      desc: "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Adipiscing Elit...",
+      tags: ["Ecommerce Website", "WordPress Website", "SEO/Hosting", "Ecommerce Website"],
+      sub: "Regal Event company Website Design",
+      img: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
+      bgImg: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
+    },
+    {
+      logo: "/assets/tasky-dashboard.jpg",
+      title: "TechPortal Analytics",
+      desc: "Modern analytics dashboard providing real-time data insights.",
+      tags: ["React", "Dashboard", "API"],
+      sub: "TechPortal Analytics Website Design",
+      img: "/assets/tasky-dashboard.jpg",
+      bgImg: "/assets/predictive-analytics.jpg",
+    },
+    {
+      logo: "/assets/phone-mockup.jpg",
+      title: "ShopSwift E-com",
+      desc: "Fast, secure, and user-centric marketplace for high-volume retail.",
+      tags: ["Next.js", "Stripe", "Postgres"],
+      sub: "ShopSwift E-com Website Design",
+      img: "/assets/phone-mockup.jpg",
+      bgImg: "/assets/team-collaborating.jpg",
+    },
   ];
 
-  const nextProject = () => setProjectIndex((prev) => (prev + 1) % Math.ceil(projects.length / 2));
-  const prevProject = () => setProjectIndex((prev) => (prev - 1 + Math.ceil(projects.length / 2)) % Math.ceil(projects.length / 2));
+  const totalPages = Math.ceil(projects.length / 2);
+  const nextProject = () => setProjectIndex((prev) => (prev + 1) % totalPages);
+  const prevProject = () => setProjectIndex((prev) => (prev - 1 + totalPages) % totalPages);
 
   return (
     <div className="overflow-hidden">
@@ -97,171 +151,182 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      {/* About Section */}
-      {/* About Section */}
-<section className="about-section-home">
-  <div className="max-w-7xl mx-auto px-6 lg:px-16 about-inner-grid" style={{position: 'relative', zIndex: 1}}>
-   {/* Deco left */}
-<img src="/assets/deco.png" alt="" style={{ 
-  position: 'absolute', 
-  left: '-120px',      // ← more negative to cut it off on left edge
-  top: '80px',        // ← use top instead of bottom, close to heading
-  width: '220px',     // ← slightly bigger
-  height: '220px', 
-  opacity: 0.12, 
-  transform: 'scaleX(-1)',
-  pointerEvents: 'none', 
-  zIndex: 0 
-}} />
+      <section className="about-section-home">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 about-inner-grid" style={{position: 'relative', zIndex: 1}}>
+          <img src="/assets/deco.png" alt="" style={{ 
+            position: 'absolute', left: '-120px', top: '80px', width: '220px', height: '220px', 
+            opacity: 0.12, transform: 'scaleX(-1)', pointerEvents: 'none', zIndex: 0 
+          }} />
+          <img src="/assets/deco.png" alt="" style={{ 
+            position: 'absolute', right: '-60px', top: '200px', width: '300px', height: '300px', 
+            opacity: 0.08, transform: 'scaleX(-1)', pointerEvents: 'none', zIndex: 0 
+          }} />
+          <div>
+            <div className="about-label">Who We Are</div>
+            <h2 className="about-heading">About <span style={{color: '#999', fontWeight: 400}}>Us</span></h2>
+          </div>
+          <div>
+            <p className="about-desc-text">
+              <span style={{color: '#E8345A', fontFamily: 'Open Sans', fontWeight: 600}}>Odho's Solution</span>
+              {' '}where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek <strong>web and mobile apps</strong>, to impactful branding, animations, content & marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand, connect with your audience, and thrive online.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <NavLink to="/about" className="btn btn-dark gap-2">About Odho's Solution <CtaArrow /></NavLink>
+              <NavLink to="/contact" className="btn btn-outline">Book a Call</NavLink>
+            </div>
+          </div>
+        </div>
+      </section>
 
-{/* Deco right - partially cut */}
-<img src="/assets/deco.png" alt="" style={{ 
-  position: 'absolute', 
-  right: '-60px', 
-  top: '200px',        // ← change bottom to top
-  width: '300px', 
-  height: '300px', 
-  opacity: 0.08, 
-  transform: 'scaleX(-1)',  // ← ADD THIS to mirror it horizontally
-  pointerEvents: 'none', 
-  zIndex: 0 
-}} />
-    <div>
-      <div className="about-label">Who We Are</div>
-      <h2 className="about-heading">About <span style={{color: '#999', fontWeight: 400}}>Us</span></h2>
-    </div>
-    <div>
-      <p className="about-desc-text">
-        <span style={{color: '#E8345A', fontFamily: 'Open Sans', fontWeight: 600}}>Odho's Solution</span>
-        {' '}where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek <strong>web and mobile apps</strong>, to impactful branding, animations, content & marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand, connect with your audience, and thrive online.
-      </p>
-      <div className="flex flex-wrap gap-4">
-        <NavLink to="/about" className="btn btn-dark gap-2">About Odho's Solution <CtaArrow /></NavLink>
-        <NavLink to="/contact" className="btn btn-outline">Book a Call</NavLink>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* ── Portfolio Showcase ───────────────────────────────────────────── */}
+      <section className="portfolio-section" aria-label="Our Projects Showcase">
+        <div className="portfolio-shell max-w-7xl mx-auto px-6 lg:px-16">
 
-      {/* Portfolio Showcase */}
-      <section className="py-10 bg-[#F5F5F5] my-10 md:my-[60px] mx-0 rounded-[16px] relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
           {/* Header */}
           <div className="portfolio-header">
-            <small className="text-[#999] text-[13px] uppercase tracking-wider font-semibold">Portfolio</small>
-            <h2 className="text-4xl font-bold mt-2">
-              Our Projects <span className="font-normal">Showcase</span>
+            <p className="portfolio-kicker">Portfolio</p>
+            <h2 className="portfolio-title">
+              Our Projects <span className="portfolio-title-light">Showcase</span>
             </h2>
           </div>
+          <div className="portfolio-header-divider" />
 
-          {/* Grid */}
+          {/* Cards */}
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={projectIndex}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="portfolio-grid"
             >
               {projects.slice(projectIndex * 2, projectIndex * 2 + 2).map((project, i) => (
-                <div key={i} className="bg-white rounded-[16px] p-5 md:p-7 flex flex-col sm:flex-row gap-5 items-stretch shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-visible h-full">
-                  <div className="flex-1 flex flex-col gap-3 justify-between">
-                    <div>
-                      <h3 className="text-lg md:text-[22px] font-bold text-black">{project.title}</h3>
-                      <p className="text-gray-500 text-[13px] md:text-sm leading-relaxed mt-1">{project.desc}</p>
+                <div key={i} className="pf-card-wrapper">
+                  <div className="pf-card">
+
+                    {/* Left: info panel */}
+                    <div className="pf-card-info pf-card-content">
+                      <img
+                        src={project.logo}
+                        alt={project.title}
+                        className="pf-card-logo"
+                      />
+                      <div className="pf-card-body">
+                        <h3 className="pf-card-title">{project.title}</h3>
+                        <p className="pf-card-desc">{project.desc}</p>
+                        <div className="pf-card-tags">
+                          {project.tags.map((tag, ti) => (
+                            <span key={ti} className="pf-tag">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="bg-[#f0f0f0] text-[#333] text-[10px] rounded-full px-3 py-1 font-semibold">{tag}</span>
-                      ))}
-                    </div>
-                    <p className="text-[#999] text-[11px] mt-2">{project.title} Website Design</p>
+
+                    {/* Right: overlapping mockup screenshots */}
+                    <img src={project.img}   alt="" className="pf-card-mockup-fg" aria-hidden="true" />
+                    <img src={project.bgImg} alt="" className="pf-card-mockup-bg" aria-hidden="true" />
+
                   </div>
-                  <div className="flex-1 relative overflow-visible sm:-mt-5 sm:-mr-4 sm:rotate-6 flex items-center justify-center mt-4 sm:mt-0">
-                    <img src={project.img} alt={project.title} className="w-full max-w-[180px] rounded-[10px] shadow-[8px_8px_24px_rgba(0,0,0,0.15)] object-cover" />
-                  </div>
+                  <p className="pf-card-sub-external">{project.sub}</p>
                 </div>
               ))}
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation */}
-          <div className="flex justify-end items-center gap-3 mt-8">
-            <div className="w-[100px] h-1 bg-gray-300 rounded-full overflow-hidden">
-               <div className="h-full bg-[#E8345A] transition-all duration-300" style={{ width: `${((projectIndex + 1) / Math.ceil(projects.length / 2)) * 100}%` }} />
+          {/* Nav: progress bar left, arrows right */}
+          <div className="portfolio-nav" aria-label="Portfolio navigation">
+            <div className="portfolio-progress" aria-hidden="true">
+              <div
+                className="portfolio-progress-fill"
+                style={{ width: `${((projectIndex + 1) / totalPages) * 100}%` }}
+              />
             </div>
-            <button onClick={prevProject} className="w-10 h-10 rounded-full border border-black flex items-center justify-center hover:bg-black/5 transition-colors">←</button>
-            <button onClick={nextProject} className="w-10 h-10 rounded-full bg-[#E8345A] text-white flex items-center justify-center hover:bg-[#E8345A]/90 transition-colors">→</button>
+            <button
+              onClick={prevProject}
+              className="portfolio-nav-btn portfolio-nav-btn-prev"
+              aria-label="Previous projects"
+            >
+              ←
+            </button>
+            <button
+              onClick={nextProject}
+              className="portfolio-nav-btn portfolio-nav-btn-next"
+              aria-label="Next projects"
+            >
+              →
+            </button>
           </div>
+
         </div>
       </section>
+      {/* ── End Portfolio ────────────────────────────────────────────────── */}
 
       {/* Services Section */}
-      <section className="py-12 bg-[#4A2C6E] text-white mx-0 rounded-[16px] relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          
-          {/* Col 1 */}
-          <div className="flex flex-col gap-6">
-            <h2 className="text-white font-bold text-3xl">Our Services</h2>
-            <p className="text-white/70 font-medium max-w-sm">
+      <section className="home-services-section">
+        <div className="home-services-container">
+          <div className="home-services-copy">
+            <h2 className="home-services-title">Our Services</h2>
+            <p className="home-services-subtitle">
               We Offer A Range Of Creative And Digital Services Designed To Help Your Brand Stand Out
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="home-services-list">
               {services.map((service) => (
                 <NavLink 
                   key={service.id} 
                   to={`/services/${service.slug}`}
-                  className="rounded-full px-5 py-3 flex items-center gap-4 font-semibold text-sm transition-all bg-transparent border border-white/20 text-white hover:bg-white/10"
+                  onMouseEnter={() => setActiveService(service.slug)}
+                  onFocus={() => setActiveService(service.slug)}
+                  className={`home-service-item ${activeService === service.slug ? "home-service-item-active" : ""}`}
                 >
-                  <span className="text-white/60">{service.id}</span>
-                  {service.title}
+                  <span className="home-service-index">{service.id}</span>
+                  <span className="home-service-label">{service.title}</span>
                   <span className="ml-auto text-white font-bold text-lg">→</span>
                 </NavLink>
               ))}
             </div>
           </div>
-          
-          {/* Col 2 */}
-          <div className="h-full">
+          <div className="home-services-image-wrap">
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=85" 
-              alt="Service preview" 
-              className="w-full h-full object-cover rounded-[12px]"
+              src="/assets/team-collaborating.jpg"
+              alt="Team collaborating around a laptop"
+              className="home-services-image"
             />
           </div>
-
-          {/* Col 3 */}
-          <div className="flex flex-col gap-3 h-full">
-            <div className="bg-white/10 p-6 rounded-[12px] flex flex-col gap-2 h-full transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-black/20 cursor-pointer">
-              <p className="text-sm text-white/70">Ever wonder how design magic happens?</p>
-              <div className="flex items-end justify-between mt-auto">
-                <h3 className="text-white font-extrabold text-[20px] leading-tight">See How We Work</h3>
-                <button className="w-8 h-8 rounded-full bg-[#ba1c53] flex items-center justify-center text-white"><CtaArrow /></button>
+          <div className="home-services-cards">
+            <NavLink to="/work" className="home-service-info-card home-service-info-card-muted">
+              <p>Ever wonder how design magic happens?</p>
+              <div className="home-service-card-bottom">
+                <h3>See How We Work</h3>
+                <span className="home-service-card-icon home-service-card-icon-pink" aria-hidden="true">
+                  <ArrowUpRight size={20} strokeWidth={1.8} />
+                </span>
               </div>
-            </div>
-            <div className="bg-[#E8345A] p-6 rounded-[12px] flex flex-col gap-2 h-full transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-black/20 cursor-pointer">
-              <p className="text-sm text-white/80">Looking for design experts who can bring your vision to life?</p>
-              <div className="flex items-end justify-between mt-auto">
-                <h3 className="text-white font-extrabold text-[20px] leading-tight">Meet Our Expert</h3>
-                <button className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#E8345A]"><CtaArrow /></button>
+            </NavLink>
+            <NavLink to="/contact" className="home-service-info-card home-service-info-card-primary">
+              <p>Looking for design experts who can bring your vision to life?</p>
+              <div className="home-service-card-bottom">
+                <h3>Meet Our Expert</h3>
+                <span className="home-service-card-icon home-service-card-icon-white" aria-hidden="true">
+                  <ArrowUpRight size={20} strokeWidth={1.8} />
+                </span>
               </div>
-            </div>
+            </NavLink>
           </div>
         </div>
       </section>
 
       {/* Why Us Section */}
-      <section className="py-16 bg-transparent">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-10">
+      <section className="why-clients-section">
+        <div className="why-clients-container">
+          <div className="why-clients-intro">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-black">Why Our Clients Choose Us As Partners</h2>
-              <div className="why-divider mt-4" />
+              <h2>Why Our Clients Choose Us As Partners</h2>
+              <div className="why-divider" />
             </div>
-            <NavLink to="/contact" className="book-btn self-start">Book A Call <CtaArrow /></NavLink>
+            <NavLink to="/contact" className="book-btn why-book-btn">Book A Call <CtaArrow /></NavLink>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="why-clients-grid">
             {[
               { title: "Expertise & Specialization", desc: "Access to a team with expertise in various marketing disciplines, ensuring your campaigns are well rounded and effective" },
               { title: "Fresh Perspectives", desc: "We bring an outsider's perspective to your brand. This fresh perspective can help you stay ahead of competitors and adapt to changing market trends." },
@@ -269,7 +334,7 @@ export default function Home() {
               { title: "Resource Optimization", desc: "Instead of hiring and training an in-house team, you can tap into the agency's existing infrastructure, saving both time and money." }
             ].map((item) => (
               <div key={item.title} className="why-card">
-                <div className="why-icon"></div>
+                <img src="/assets/flower-transparent.png" alt="" className="why-icon" aria-hidden="true" />
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
               </div>
@@ -280,94 +345,92 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="testimonial-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+        <div className="max-w-6xl mx-auto">
           <div className="testimonial-label">Testimonial</div>
           <h2 className="testimonial-heading">Social Proof & Success Stories</h2>
           <p className="testimonial-sub">Here's what our clients have to say after partnering us — real experiences, real results, and real stories behind the Search</p>
-
-          <div className="relative max-w-4xl mx-auto mt-10">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={testIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="test-card"
-            >
-              <div className="test-left">
-                <div className="test-quote">"</div>
-                <p className="test-text">{testimonials[testIndex].quote}</p>
-                <div className="flex items-center gap-4">
-                  <img src={testimonials[testIndex].avatar} alt={testimonials[testIndex].name} className="test-avatar" />
-                  <div>
-                    <div className="test-name">{testimonials[testIndex].name}</div>
-                    <div className="test-role">{testimonials[testIndex].role}</div>
+          <div className="relative max-w-4xl mx-auto mt-10 mx-8" style={{paddingLeft: '32px', paddingRight: '32px'}}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={testIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="test-card"
+              >
+                <div className="test-left">
+                  <div className="test-quote">“</div>
+                  <p className="test-text">{testimonials[testIndex].quote}</p>
+                  <div className="flex items-center gap-4">
+                    <img src={testimonials[testIndex].avatar} alt={testimonials[testIndex].name} className="test-avatar" />
+                    <div>
+                      <div className="test-name">{testimonials[testIndex].name}</div>
+                      <div className="test-role">{testimonials[testIndex].role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="test-img-wrap">
-                <img src={testimonials[testIndex].projectImg} alt={testimonials[testIndex].project} />
-                <div className="test-img-label">{testimonials[testIndex].project}</div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          <button className="arrow-btn arrow-left" onClick={prevTest}><ChevronLeft /></button>
-          <button className="arrow-btn arrow-right" onClick={nextTest}><ChevronRight /></button>
-        </div>
-
-        <div className="trust-bar">
-          <div className="avatar-stack">
-            {[
-              "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
-              "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
-              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80"
-            ].map((src, i) => (
-              <img key={i} src={src} alt="avatar" />
-            ))}
+                <div className="test-img-wrap">
+                  <img src={testimonials[testIndex].projectImg} alt={testimonials[testIndex].project} />
+                </div>
+              </motion.div>
+            </AnimatePresence>
+            <button className="arrow-btn arrow-left" onClick={prevTest}><ChevronLeft /></button>
+            <button className="arrow-btn arrow-right" onClick={nextTest}><ChevronRight /></button>
           </div>
-          <div className="stars">★★★★★</div>
-          <div className="text-white font-bold">4.9 / 5.0</div>
-          <div className="trust-text">Trusted by <span>500+</span> Worldwide Clients</div>
-        </div>
+          <div className="trust-bar">
+            <div className="avatar-stack">
+              {[
+                "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+                "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+              ].map((src, i) => (
+                <img key={i} src={src} alt="avatar" />
+              ))}
+            </div>
+            <div className="trust-stars">★★★★★</div>
+            <div className="trust-rating">4.9 / 5.0</div>
+            <div className="trust-text">Trusted by <span>500+</span> Worldwide Clients</div>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
+        <div className="faq-container">
           <div className="faq-left">
             <div className="faq-label">FAQ</div>
             <h2 className="faq-heading">Questions <span>Answers</span></h2>
-
             {[
-            { q: "What services do you offer?", a: "We design everything you need for your business: logos, websites, apps, product and marketing materials. Need a new brand? We'll create it. Want a website? We'll build it. Looking for marketing designs? We've got you covered." },
-            { q: "How does the Monthly Retainer subscription work?", a: "You reserve ongoing design and development capacity each month with a predictable workflow and priority support." },
-            { q: "What's your refund policy?", a: "We align on scope before work starts and handle concerns through clear checkpoints and transparent communication." },
-            { q: "How soon can you start working together?", a: "Most projects can begin after discovery, requirements, and initial onboarding are complete." },
-            { q: "What do you need to get started?", a: "Brief, scope of work, branding assets, and access points are usually required to kickstart the project." },
-            { q: "Can you work with tight deadlines?", a: "Yes, we offer expedited timelines for projects requiring accelerated delivery for an additional premium." },
-          ].map((faq, idx) => (
-            <div 
-              key={idx} 
-              className={`faq-item ${openFaq === idx ? 'open' : ''}`}
-              onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-            >
-              <div className="faq-item-header">
-                <div className="faq-num">/ 0{idx + 1}</div>
-                <div className="faq-question">{faq.q}</div>
-                <div className="faq-toggle">{openFaq === idx ? '—' : '+'}</div>
+              { q: "What services do you offer?", a: "We design everything you need for your business: logos, websites, apps, Product and marketing materials. Need a new brand? We'll create it. Want a website? We'll build it. Looking for marketing designs? We've got you covered. You can pick and choose what you need most right now." },
+              { q: "How does the Monthly Retainer subscription work?", a: "You reserve ongoing creative and development support each month, with clear priorities, steady delivery, and a predictable workflow." },
+              { q: "What's your refund policy?", a: "We align on scope before work starts and handle concerns through clear checkpoints, revisions, and transparent communication." },
+              { q: "How soon can you start working together?", a: "Most projects can begin after discovery, requirements, and initial onboarding are complete." },
+              { q: "What do you need to get started?", a: "A brief, project goals, branding assets, content, access details, and any examples you like are usually enough to begin." },
+              { q: "Can you work with tight deadlines?", a: "Yes, we can support fast timelines when scope, feedback, and content are aligned from the start." },
+              { q: "What if I don't have brand guidelines or a clear brand identity?", a: "We can help shape the visual direction first, then use it consistently across your site, app, or marketing materials." },
+              { q: "Can I pause or cancel my subscription anytime?", a: "Yes, you can pause or cancel based on your plan terms and current active work." },
+            ].map((faq, idx) => (
+              <div 
+                key={idx} 
+                className={`faq-item ${openFaq === idx ? 'open' : ''}`}
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+              >
+                <div className="faq-item-header">
+                  <div className="faq-num">/ 0{idx + 1}</div>
+                  <div className="faq-question">{faq.q}</div>
+                  <div className="faq-toggle">{openFaq === idx ? '—' : '+'}</div>
+                </div>
+                <div className="faq-answer">{faq.a}</div>
               </div>
-              <div className="faq-answer">{faq.a}</div>
-            </div>
-          ))}
+            ))}
           </div>
           <div className="faq-right">
             <div className="contact-card">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Avatar" className="contact-avatar" />
-              <div className="contact-text">Feel free to reach out <em>whenever</em> you have questions.</div>
-              <button className="ask-btn">Ask a question</button>
+              <img src="/assets/designer-sketching.jpg" alt="Designer sketching" className="contact-avatar" />
+              <div className="contact-text">Feel free to reach out whenever<span> you have questions.</span></div>
+              <NavLink to="/contact" className="ask-btn">Ask a question</NavLink>
             </div>
           </div>
         </div>
