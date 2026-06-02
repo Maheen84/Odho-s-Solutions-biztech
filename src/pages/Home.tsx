@@ -1,15 +1,18 @@
 import { X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import CtaBanner from "../components/CtaBanner";
 import CtaArrow from "../components/CtaArrow";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [projectIndex, setProjectIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [testIndex, setTestIndex] = useState(0);
   const [activeService, setActiveService] = useState("web-design");
+  const cardWidth = 750;
+  const cardGap = 24;
+  const slideDistance = cardWidth + cardGap;
 
   const testimonials = [
     {
@@ -72,9 +75,9 @@ export default function Home() {
     {
       logo: "/assets/WhatsApp Image 2026-05-15 at 9.44.39 PM.jpeg",
       title: "Regal Event Company",
-      desc: "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Adipiscing Elit...",
-      tags: ["Ecommerce Website", "WordPress Website", "SEO/Hosting", "Ecommerce Website"],
-      sub: "Regal Event company Website Design",
+      desc: "A premium event website built to showcase venues, booking details and celebration highlights in a polished, high-impact layout.",
+      tags: ["Ecommerce Website", "WordPress Website", "SEO/Hosting", "Marketing"],
+      sub: "Regal Event Company Website Design",
       img: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
       bgImg: "/assets/WhatsApp Image 2026-05-15 at 9.44.40 PM (2).jpeg",
     },
@@ -90,26 +93,40 @@ export default function Home() {
     {
       logo: "/assets/tasky-dashboard.jpg",
       title: "TechPortal Analytics",
-      desc: "Modern analytics dashboard providing real-time data insights.",
-      tags: ["React", "Dashboard", "API"],
-      sub: "TechPortal Analytics Website Design",
-      img: "/assets/tasky-dashboard.jpg",
+      desc: "A polished analytics suite for monitoring revenue, customer behavior, and growth KPIs in a clean dashboard experience.",
+      tags: ["React", "Dashboard", "Data Visualization", "API"],
+      sub: "TechPortal Analytics Dashboard Design",
+      img: "/assets/portfoilio-second.jpeg",
       bgImg: "/assets/predictive-analytics.jpg",
     },
     {
       logo: "/assets/phone-mockup.jpg",
       title: "ShopSwift E-com",
-      desc: "Fast, secure, and user-centric marketplace for high-volume retail.",
-      tags: ["Next.js", "Stripe", "Postgres"],
-      sub: "ShopSwift E-com Website Design",
-      img: "/assets/phone-mockup.jpg",
+      desc: "A modern e-commerce platform designed for fast checkout, effortless browsing, and conversion-focused user journeys.",
+      tags: ["Next.js", "Stripe", "PostgreSQL", "UX Design"],
+      sub: "ShopSwift E-commerce Website Design",
+      img: "/assets/portfoilio-second.jpeg",
       bgImg: "/assets/team-collaborating.jpg",
     },
   ];
 
-  const totalPages = Math.ceil(projects.length / 2);
-  const nextProject = () => setProjectIndex((prev) => (prev + 1) % totalPages);
-  const prevProject = () => setProjectIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  const actualProjectCount = projects.length;
+  const extendedProjects = [projects[actualProjectCount - 1], ...projects, projects[0]];
+  const totalExtendedSlides = extendedProjects.length;
+
+  const nextProject = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalExtendedSlides);
+  };
+
+  const prevProject = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalExtendedSlides) % totalExtendedSlides);
+  };
+
+  useEffect(() => {
+    if (!isTransitionEnabled) {
+      requestAnimationFrame(() => requestAnimationFrame(() => setIsTransitionEnabled(true)));
+    }
+  }, [isTransitionEnabled]);
 
   return (
     <div className="overflow-hidden">
@@ -180,7 +197,7 @@ export default function Home() {
 
       {/* ── Portfolio Showcase ───────────────────────────────────────────── */}
       <section className="portfolio-section" aria-label="Our Projects Showcase">
-        <div className="portfolio-shell max-w-7xl mx-auto px-6 lg:px-16">
+        <div className="max-w-7xl mx-auto px-4 portfolio-shell">
 
           {/* Header */}
           <div className="portfolio-header">
@@ -192,21 +209,28 @@ export default function Home() {
           <div className="portfolio-header-divider" />
 
           {/* Cards */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={projectIndex}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="portfolio-grid"
+          <div className="portfolio-slider-viewport">
+            <div
+              className="portfolio-slider-track"
+              style={{
+                transform: `translateX(-${currentSlide * slideDistance}px)`,
+                transition: isTransitionEnabled ? "transform 0.45s ease" : "none",
+              }}
+              onTransitionEnd={() => {
+                if (currentSlide === totalExtendedSlides - 1) {
+                  setIsTransitionEnabled(false);
+                  setCurrentSlide(1);
+                } else if (currentSlide === 0) {
+                  setIsTransitionEnabled(false);
+                  setCurrentSlide(actualProjectCount);
+                }
+              }}
             >
-              {projects.slice(projectIndex * 2, projectIndex * 2 + 2).map((project, i) => (
-                <div key={i} className="pf-card-wrapper">
+              {extendedProjects.map((project, i) => (
+                <div key={`slide-${i}-${project.title}`} className="pf-card-wrapper">
                   <div className="pf-card">
 
-                    {/* Left: info panel */}
-                    <div className="pf-card-info pf-card-content">
+                    <div className="pf-card-info">
                       <img
                         src={project.logo}
                         alt={project.title}
@@ -223,35 +247,43 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* Right: overlapping mockup screenshots */}
-                    <img src={project.img}   alt="" className="pf-card-mockup-fg" aria-hidden="true" />
-                    <img src={project.bgImg} alt="" className="pf-card-mockup-bg" aria-hidden="true" />
+                    <div className="pf-card-visual" aria-hidden="true">
+                      <div className="pf-card-mockup-area">
+                        <img
+                          src={project.img}
+                          alt=""
+                          className="pf-card-mockup-inner"
+                        />
+                      </div>
+                    </div>
 
                   </div>
                   <p className="pf-card-sub-external">{project.sub}</p>
                 </div>
               ))}
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </div>
 
-          {/* Nav: progress bar left, arrows right */}
+          {/* Nav: progress bar stretches full width, arrows pinned right */}
           <div className="portfolio-nav" aria-label="Portfolio navigation">
             <div className="portfolio-progress" aria-hidden="true">
               <div
                 className="portfolio-progress-fill"
-                style={{ width: `${((projectIndex + 1) / totalPages) * 100}%` }}
+                style={{
+                  width: `${((currentSlide - 1 + actualProjectCount) % actualProjectCount + 1) / actualProjectCount * 100}%`,
+                }}
               />
             </div>
             <button
               onClick={prevProject}
-              className="portfolio-nav-btn portfolio-nav-btn-prev"
+              className="portfolio-nav-btn"
               aria-label="Previous projects"
             >
               ←
             </button>
             <button
               onClick={nextProject}
-              className="portfolio-nav-btn portfolio-nav-btn-next"
+              className="portfolio-nav-btn"
               aria-label="Next projects"
             >
               →
@@ -261,7 +293,6 @@ export default function Home() {
         </div>
       </section>
       {/* ── End Portfolio ────────────────────────────────────────────────── */}
-
       {/* Services Section */}
       <section className="home-services-section">
         <div className="home-services-container">
@@ -350,15 +381,7 @@ export default function Home() {
           <h2 className="testimonial-heading">Social Proof & Success Stories</h2>
           <p className="testimonial-sub">Here's what our clients have to say after partnering us — real experiences, real results, and real stories behind the Search</p>
           <div className="relative max-w-4xl mx-auto mt-10 mx-8" style={{paddingLeft: '32px', paddingRight: '32px'}}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={testIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="test-card"
-              >
+              <div className="test-card">
                 <div className="test-left">
                   <div className="test-quote">“</div>
                   <p className="test-text">{testimonials[testIndex].quote}</p>
@@ -373,8 +396,7 @@ export default function Home() {
                 <div className="test-img-wrap">
                   <img src={testimonials[testIndex].projectImg} alt={testimonials[testIndex].project} />
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
             <button className="arrow-btn arrow-left" onClick={prevTest}><ChevronLeft /></button>
             <button className="arrow-btn arrow-right" onClick={nextTest}><ChevronRight /></button>
           </div>
