@@ -10,8 +10,17 @@ export default function Home() {
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [testIndex, setTestIndex] = useState(0);
   const [activeService, setActiveService] = useState("web-design");
-  const cardWidth = 750;
-  const cardGap = 24;
+
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const cardWidth = windowWidth <= 768 ? windowWidth - 32 : 750;
+  const cardGap = windowWidth <= 768 ? 10 : 24;
   const slideDistance = cardWidth + cardGap;
 
   const testimonials = [
