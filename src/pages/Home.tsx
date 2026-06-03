@@ -236,40 +236,36 @@ export default function Home() {
               }}
             >
               {extendedProjects.map((project, i) => (
-                <div key={`slide-${i}-${project.title}`} className="pf-card-wrapper">
-                  <div className="pf-card">
-
-                    <div className="pf-card-info">
-                      <img
-                        src={project.logo}
-                        alt={project.title}
-                        className="pf-card-logo"
-                      />
-                      <div className="pf-card-body">
-                        <h3 className="pf-card-title">{project.title}</h3>
-                        <p className="pf-card-desc">{project.desc}</p>
-                        <div className="pf-card-tags">
-                          {project.tags.map((tag, ti) => (
-                            <span key={ti} className="pf-tag">{tag}</span>
-                          ))}
+                  <div key={`slide-${i}-${project.title}`} className="pf-card-wrapper">
+                    <div className="pf-card">
+                      <div className="pf-card-info">
+                        <img
+                          src={project.logo}
+                          alt={project.title}
+                          className="pf-card-logo"
+                        />
+                        <div className="pf-card-body">
+                          <h3 className="pf-card-title">{project.title}</h3>
+                          <p className="pf-card-desc">{project.desc}</p>
+                          <div className="pf-card-tags">
+                            {project.tags.map((tag, ti) => (
+                              <span key={ti} className="pf-tag">{tag}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pf-card-visual" aria-hidden="true">
+                        <div className="pf-card-mockup-area">
+                          <div className="pf-card-mockup-mask">
+                            <img src={project.img} alt="" className="pf-card-mockup-back" />
+                            <img src={project.img} alt="" className="pf-card-mockup-front" />
+                          </div>
                         </div>
                       </div>
                     </div>
-
-                    <div className="pf-card-visual" aria-hidden="true">
-                      <div className="pf-card-mockup-area">
-                        <img
-                          src={project.img}
-                          alt=""
-                          className="pf-card-mockup-inner"
-                        />
-                      </div>
-                    </div>
-
+                    <p className="pf-card-sub-external">{project.sub}</p>
                   </div>
-                  <p className="pf-card-sub-external">{project.sub}</p>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
 
