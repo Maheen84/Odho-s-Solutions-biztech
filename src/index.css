@@ -4207,6 +4207,7 @@ a.cta-banner-card-btn .navbar-cta-icon,
 
   .footer-nav-col {
     grid-column: span 1 !important;
+    gap: 8px !important; /* sitting tight and compact */
   }
 
   .footer-contact-col {
@@ -4224,7 +4225,7 @@ a.cta-banner-card-btn .navbar-cta-icon,
     justify-content: flex-start !important;
     gap: 12px !important;
     padding: 0 16px !important;
-    margin: 16px auto 24px 16px !important;
+    margin: 16px 0 24px 16px !important;
     background: transparent !important;
     box-shadow: none !important;
     border-radius: 0 !important;
@@ -4249,7 +4250,7 @@ a.cta-banner-card-btn .navbar-cta-icon,
     padding: 0 16px 24px !important;
     width: 100% !important;
     max-width: 100% !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .footer-giant-text {
@@ -4257,24 +4258,25 @@ a.cta-banner-card-btn .navbar-cta-icon,
     font-weight: 700 !important;
     color: #DA375C !important;
     white-space: nowrap !important;
+    text-align: left !important;
   }
 
   .footer-bottom-bar {
     order: 5 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 12px !important;
     padding: 20px 16px !important;
     border-top: 1px solid #dddddd !important;
-    text-align: center !important;
+    text-align: left !important;
     width: 100% !important;
   }
 
   .footer-bottom-right {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     gap: 8px !important;
   }
 
