@@ -76,8 +76,7 @@ export default function About() {
               {['UI/UX Design', 'Graphic Design', 'Web Development', 'Seo Service', 'Social Media', 'Mobile & Desktop App'].map(service => (
                 <span
                   key={service}
-                  onClick={() => setActiveService(service)}
-                  className={`tag-pill ${activeService === service ? 'active' : ''} ${service === 'Seo Service' ? 'tag-plus' : ''}`}
+                  className={`tag-pill ${service === 'Seo Service' ? 'tag-plus' : ''}`}
                 >
                   {service === 'Seo Service' && <span className="tag-plus-icon">+</span>}
                   {service}
