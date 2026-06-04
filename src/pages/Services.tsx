@@ -1,4 +1,4 @@
-import { Check, Monitor, Layout, Cpu, Smartphone, Settings, BarChart3 } from "lucide-react";
+import { Check, Monitor, Layout, Cpu, Smartphone, Settings, BarChart3, Search } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import CtaBanner from "../components/CtaBanner";
@@ -9,7 +9,8 @@ export default function Services() {
     { icon: <Monitor size={24} />, title: "Web Design", desc: "Bespoke web design perfect for your brand and target audience.", slug: "web-design" },
     { icon: <Layout size={24} />, title: "CRM", desc: "Sell products online 24/7 through a well-designed, easy-to-use eCommerce website.", slug: "crm" },
     { icon: <Cpu size={24} />, title: "AI Automation", desc: "Automate repetitive and time-consuming tasks with our AI-powered workflow.", slug: "ai-automation" },
-    { icon: <Settings size={24} />, title: "POS System", desc: "Smart POS system designed for modern retail and growing businesses.", slug: "pos" }
+    { icon: <Settings size={24} />, title: "POS System", desc: "Smart POS system designed for modern retail and growing businesses.", slug: "pos" },
+    { icon: <Search size={24} />, title: "SEO Service", desc: "Data-driven SEO strategies that boost your rankings, traffic, and online visibility.", slug: "seo-service" }
   ];
 
   const pricing = [
@@ -37,9 +38,9 @@ export default function Services() {
             <NavLink to="/contact" className="btn btn-dark gap-2">Get In Touch Today <CtaArrow /></NavLink>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {categories.map((cat, idx) => (
-              <NavLink to={`/services/${cat.slug}`} key={idx} className="p-10 border border-line rounded-[32px] hover:shadow-custom hover:border-primary/20 transition-all group block bg-white">
+              <NavLink to={`/services/${cat.slug}`} key={idx} className="p-10 border border-line rounded-[32px] hover:shadow-custom hover:border-primary/20 transition-all group block bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                 <div className="w-14 h-14 bg-soft text-primary rounded-2xl flex items-center justify-center mb-10 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   {cat.icon}
                 </div>
