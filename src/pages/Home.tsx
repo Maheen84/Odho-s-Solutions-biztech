@@ -141,7 +141,7 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="hero-section-home">
-        <div className="hero-grid">
+        <div className="container hero-grid">
           <div className="hero-left">
             <h1 className="hero-heading">
               We Drive Growth To Your Business{" "}
@@ -206,7 +206,7 @@ export default function Home() {
 
       {/* ── Portfolio Showcase ───────────────────────────────────────────── */}
       <section className="portfolio-section" aria-label="Our Projects Showcase">
-        <div className="portfolio-shell">
+        <div className="container portfolio-shell">
 
           {/* Header */}
           <div className="portfolio-header">
@@ -300,7 +300,7 @@ export default function Home() {
       {/* ── End Portfolio ────────────────────────────────────────────────── */}
       {/* Services Section */}
       <section className="home-services-section">
-        <div className="home-services-container">
+        <div className="container home-services-container">
           <div className="home-services-copy">
             <h2 className="home-services-title">Our Services</h2>
             <p className="home-services-subtitle">
@@ -354,7 +354,7 @@ export default function Home() {
 
       {/* Why Us Section */}
       <section className="why-clients-section">
-        <div className="why-clients-container">
+        <div className="container why-clients-container">
           <div className="why-clients-intro">
             <div>
               <h2>Why Our Clients Choose Us As Partners</h2>
@@ -425,7 +425,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <section className="faq-section">
-        <div className="faq-container">
+        <div className="container faq-container">
           <div className="faq-left">
             <div className="faq-label">FAQ</div>
             <h2 className="faq-heading">Questions <span>Answers</span></h2>

@@ -357,7 +357,7 @@ export default function ServiceDetail() {
           </section>
 
           {/* Global.io Dashboard Preview */}
-          <section className="py-24 bg-navy mx-6 rounded-[40px] text-white overflow-hidden my-12">
+          <section className="py-24 bg-navy w-full text-white overflow-hidden my-12">
             <div className="container">
               <div className="max-w-3xl mx-auto text-center mb-16 px-4">
                  <div className="dash-label text-white after:bg-white before:bg-white mb-6 mx-auto w-fit">Product Preview</div>
@@ -367,7 +367,7 @@ export default function ServiceDetail() {
                  </p>
               </div>
 
-               <div className="bg-white rounded-[32px] overflow-hidden text-secondary shadow-2xl max-w-5xl mx-auto border-8 border-white/10">
+               <div className="bg-white rounded-[32px] overflow-hidden text-secondary shadow-2xl w-full lg:w-[70%] max-w-4xl mx-auto border-8 border-white/10">
                   <img 
                     src="/assets/crm-dashboard.jpg" 
                     alt="CRM Dashboard Preview" 

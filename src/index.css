@@ -314,9 +314,9 @@
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   gap: 112px;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
+  
+  
+  
 }
 
 .why-clients-intro {
@@ -423,11 +423,11 @@
 
 .testimonial-section {
   background: linear-gradient(135deg, #E8345A 0%, #9B2D7E 40%, #4A1F6E 100%);
-  border-radius: 28px;
+  border-radius: 0;
   padding: 80px 48px;
   position: relative;
   z-index: 10;
-  margin: 40px 24px;
+  margin: 40px 0; width: 100%;
 }
 
 .testimonial-label {
@@ -770,9 +770,9 @@
 .portfolio-shell {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
+  
+  
+  
 }
 
 .portfolio-header {
@@ -1156,10 +1156,10 @@
 .home-services-section {
   position: relative;
   z-index: 10;
-  margin: 56px auto 72px;
-  width: min(1440px, calc(100% - 48px));
+  margin: 56px 0 72px;
+  width: 100%;
   overflow: hidden;
-  border-radius: 32px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 72% 8%, rgba(255, 255, 255, 0.08), transparent 34%),
     linear-gradient(105deg, #3f2765 0%, #4a2f72 46%, #57427c 100%);
@@ -1417,8 +1417,8 @@
 
 @media (max-width: 760px) {
   .home-services-section {
-    width: min(100% - 32px, 680px);
-    border-radius: 24px;
+    width: 100%;
+    border-radius: 0;
   }
 
   .home-services-container {
@@ -1456,16 +1456,16 @@
   grid-template-columns: 1.8fr 1fr;
   gap: 32px;
   align-items: start;
-  max-width: 1440px;
+  
   width: 100%;
-  margin: 0 auto;
-  padding: 56px 48px;
+  
+  padding: 56px 0;
 }
 
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    padding: 32px 20px;
+    padding: 32px 0;
     gap: 24px;
   }
 
@@ -3617,8 +3617,8 @@ a.why-book-btn .navbar-cta-icon svg {
   gap: 34px;
   align-items: start;
   max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 64px;
+  
+  
 }
 
 .faq-left {
@@ -4306,8 +4306,8 @@ a.cta-banner-card-btn .navbar-cta-icon,
 
   /* SERVICES HOME */
   .home-services-section {
-    width: calc(100% - 24px) !important;
-    border-radius: 20px !important;
+    width: 100% !important;
+    border-radius: 0;
     margin: 32px auto 48px !important;
   }
 
@@ -4394,8 +4394,9 @@ a.cta-banner-card-btn .navbar-cta-icon,
   /* TESTIMONIALS */
   .testimonial-section {
     padding: 40px 20px !important;
-    margin: 24px 16px !important;
-    border-radius: 20px !important;
+    margin: 24px 0 !important;
+    width: 100% !important;
+    border-radius: 0;
   }
 
   .testimonial-heading {
@@ -4832,13 +4833,13 @@ a.cta-banner-card-btn .navbar-cta-icon,
   }
 
   .testimonial-section {
-    margin: 16px 10px !important;
+    margin: 16px 0 !important; width: 100% !important;
     padding: 32px 14px !important;
   }
 
   .home-services-section {
-    width: calc(100% - 16px) !important;
-    border-radius: 16px !important;
+    width: 100% !important;
+    border-radius: 0;
   }
 
   .cta-banner-card {
@@ -4873,8 +4874,8 @@ a.cta-banner-card-btn .navbar-cta-icon,
   transform: translateY(-50%) !important;
   z-index: 998 !important;
   background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border: none !important;
   border-radius: 0 16px 16px 0 !important;
   padding: 16px 12px !important;
@@ -4895,11 +4896,5 @@ a.cta-banner-card-btn .navbar-cta-icon,
 @media (max-width: 1023px) {
   .footer-socials {
     display: none !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    padding-left: 80px;
   }
 }

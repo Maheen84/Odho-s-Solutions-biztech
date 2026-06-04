@@ -55,7 +55,7 @@ export default function Services() {
       </section>
 
       {/* Dashboard Preview Section (Inspired by CRM page) */}
-      <section className="py-24 bg-navy mx-6 rounded-[40px] text-white overflow-hidden">
+      <section className="py-24 bg-navy w-full text-white overflow-hidden">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16 px-4">
              <div className="dash-label text-white after:bg-white before:bg-white mb-6 mx-auto w-fit">Product Preview</div>
@@ -65,7 +65,7 @@ export default function Services() {
              </p>
           </div>
 
-          <div className="bg-[#1a1035] rounded-[32px] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] max-w-5xl mx-auto border-[12px] border-white/10 relative group flex items-center justify-center">
+          <div className="bg-[#1a1035] rounded-[32px] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full lg:w-[70%] max-w-4xl mx-auto border-[12px] border-white/10 relative group flex items-center justify-center aspect-video">
              <img 
                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85" 
                alt="Product Dashboard Analytics Preview" 
