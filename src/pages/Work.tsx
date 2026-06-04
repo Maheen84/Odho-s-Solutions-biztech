@@ -119,14 +119,14 @@ export default function Work() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                 />
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1035]/90 via-[#1a1035]/30 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent pointer-events-none" />
                 
                 {/* Content */}
                 <div className="absolute inset-0 p-10 md:p-14 flex flex-col justify-end text-white z-10">
                     <div className="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
                       <strong className="text-[#e91e8c] text-sm font-bold tracking-widest mb-3 block">{item.subtitle}</strong>
-                      <h3 className="text-3xl md:text-5xl font-black leading-tight mb-4">{item.title}</h3>
-                      <p className="text-white/80 text-base font-medium leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{item.desc}</p>
+                      <h3 className="text-3xl md:text-5xl font-black leading-tight mb-4 text-white drop-shadow-md">{item.title}</h3>
+                      <p className="text-white text-base font-medium leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-md">{item.desc}</p>
                     </div>
                 </div>
               </div>
