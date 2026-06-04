@@ -4872,13 +4872,14 @@ a.cta-banner-card-btn .navbar-cta-icon,
   left: 0 !important;
   transform: translateY(-50%) !important;
   z-index: 998 !important;
-  background: #fff !important;
-  border: 1px solid #f0f0f0 !important;
-  border-left: none !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: none !important;
   border-radius: 0 16px 16px 0 !important;
   padding: 16px 12px !important;
   margin: 0 !important;
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
   display: flex !important;
   flex-direction: column !important;
   width: auto !important;
