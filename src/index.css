@@ -754,7 +754,7 @@
 .portfolio-shell {
   display: flex;
   flex-direction: column;
-  max-width: 1240px;
+  max-width: 1340px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -812,7 +812,7 @@
 
 /* ── Slider viewport ───────────────────────────────────────────────── */
 .portfolio-slider-viewport {
-  width: min(1124px, 100%) !important;
+  width: min(1400px, 100%) !important; 
   margin: 0 auto !important;
   overflow: hidden !important;
 }
@@ -868,7 +868,7 @@
   padding-top: 0 !important;
   width: 100% !important;
   max-width: 280px !important;
-  padding: 10px !important;
+  padding: 10px 10px 80px 50px !important; 
   box-sizing: border-box !important;
   background: transparent !important;
 }
@@ -883,13 +883,14 @@
 
 /* Logo */
 .pf-card-logo {
-  max-width: 150px !important;
+  max-width: 160px !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
   object-position: left center !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 10px !important;
   margin-top: 20px !important;
+  margin-left: -40px !important; 
   /* exact spacing from logo to title */
   flex-shrink: 0 !important;
 }
@@ -1050,16 +1051,18 @@
   color: #888888 !important;
   margin: 0 !important;
   padding-left: 2px !important;
+  padding-top: 20px !important;
 }
 
 /* ── Nav bar: progress left, arrows right ────────────────────────── */
 .portfolio-nav {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   gap: 16px !important;
   margin-top: 28px !important;
   width: 100% !important;
+  padding: 0 200px !important;
 }
 
 .portfolio-progress {
