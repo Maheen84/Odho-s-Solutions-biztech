@@ -4890,3 +4890,15 @@ a.cta-banner-card-btn .navbar-cta-icon,
     gap: 16px !important;
   }
 }
+
+@media (max-width: 1023px) {
+  .footer-socials {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-left: 80px;
+  }
+}
