@@ -250,7 +250,7 @@ export default function SeoPricing() {
                 </h3>
 
                 {/* Tabs */}
-                <div className="flex items-center self-start bg-[#100920] rounded-full p-1 mb-8 w-fit border border-[#3a1d5e]/50 ">
+                <div className="flex items-center self-center bg-[#100920] rounded-full p-1 mb-8 w-fit border border-[#3a1d5e]/50 ">
                   {(['Starter', 'Growth', 'Enterprise'] as TierType[]).map((t) => (
                     <button
                       key={t}
