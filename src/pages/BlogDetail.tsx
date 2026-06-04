@@ -15,8 +15,8 @@ export default function BlogDetail() {
       />
 
       {/* Article Section */}
-      <section className="py-12 bg-white px-4 md:px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12 bg-white">
+        <div className="container">
           <div className="blog-detail-grid grid grid-cols-[minmax(0,1fr)_minmax(180px,260px)] gap-6 items-start">
             
             {/* Left Content */}

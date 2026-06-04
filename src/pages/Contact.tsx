@@ -87,7 +87,7 @@ export default function Contact() {
       </section>
 
       {/* Get A Quote / Contact Form */}
-      <section className="pb-24 px-4">
+      <section className="pb-24">
         <div className="container">
           <div className="contact-form-card">
             {/* Left Panel */}

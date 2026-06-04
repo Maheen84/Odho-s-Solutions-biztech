@@ -37,14 +37,14 @@ export default function About() {
 
   return (
     <div className="overflow-hidden">
-      <PageHero 
-        title="About Us" 
+      <PageHero
+        title="About Us"
         breadcrumbText="About Us"
         description="We are a team of visionary designers and strategic developers helping brands navigate the digital landscape since 2010."
       />
 
       {/* About Content */}
-      <div className="container mx-auto py-12">
+      <div className="container py-12">
         <section className="about-content shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div className="about-left">
             <span className="about-label">About Us</span>
@@ -58,7 +58,7 @@ export default function About() {
             <p>
               Since our founding, we have been committed to more than just building websites. We design and develop holistic digital experiences from sleek web and mobile apps to impactful branding, animations, content and marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand.
             </p>
-            <div className="about-btns">
+            <div className="about-btns flex flex-wrap gap-6">
               <NavLink to="/contact" className="btn btn-dark hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Get Started Now <CtaArrow /></NavLink>
               <NavLink to="/contact" className="btn btn-outline hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Book A Call <CtaArrow /></NavLink>
             </div>
@@ -67,7 +67,7 @@ export default function About() {
       </div>
 
       {/* Stats Info Bar */}
-      <div className="container mx-auto pt-24 pb-12 px-4">
+      <div className="container pt-24 pb-12">
         <div className="stats-bar">
           {/* Col 1 */}
           <div className="stats-col">
@@ -113,29 +113,29 @@ export default function About() {
       </div>
 
       {/* Philosophy */}
-      <section className="philosophy-section px-4">
-        <div className="container mx-auto">
+      <section className="philosophy-section">
+        <div className="container">
           <span className="philosophy-header-label">Our Philosophy</span>
           <h2 className="philosophy-header-title">Driven By People, <strong>Powered</strong> By Progress</h2>
-          
+
           <div className="philosophy-cards-row">
             <div className="philosophy-card">
-               <span className="philosophy-card-num">01</span>
-               <p className="philosophy-card-desc">
-                 Humans are at the heart of everything we do. Simply put we're people, working with people and for people. Humans are at the heart of everything we do.
-               </p>
+              <span className="philosophy-card-num">01</span>
+              <p className="philosophy-card-desc">
+                Humans are at the heart of everything we do. Simply put we're people, working with people and for people. Humans are at the heart of everything we do.
+              </p>
             </div>
             <div className="philosophy-card">
-               <span className="philosophy-card-num">02</span>
-               <p className="philosophy-card-desc">
-                 We always focus on the result that the product brings to the business. For us, it is not only about aesthetics but also about efficiency. We understand that entrepreneurial creativity must bring profits.
-               </p>
+              <span className="philosophy-card-num">02</span>
+              <p className="philosophy-card-desc">
+                We always focus on the result that the product brings to the business. For us, it is not only about aesthetics but also about efficiency. We understand that entrepreneurial creativity must bring profits.
+              </p>
             </div>
             <div className="philosophy-card">
-               <span className="philosophy-card-num">03</span>
-               <p className="philosophy-card-desc">
-                 We are constantly evolving, analyzing user feedback, and always seeking fresh ideas. We call this the process of continuous improvement.
-               </p>
+              <span className="philosophy-card-num">03</span>
+              <p className="philosophy-card-desc">
+                We are constantly evolving, analyzing user feedback, and always seeking fresh ideas. We call this the process of continuous improvement.
+              </p>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ export default function About() {
 
       {/* Stats Banner */}
       <section className="py-12">
-        <div className="container px-4">
+        <div className="container">
           <div className="roi-stats-card">
             <span className="roi-label">Success In Numbers</span>
             <h2 className="roi-heading">The Best Return On Your Investment</h2>
@@ -183,8 +183,8 @@ export default function About() {
       </section>
 
       {/* We Work With Section */}
-      <section className="work-with-section px-4">
-        <div className="container mx-auto">
+      <section className="work-with-section">
+        <div className="container">
           <div className="work-with-container">
             <div className="work-with-left">
               <span className="work-with-label">Built For</span>
@@ -198,7 +198,7 @@ export default function About() {
                 </button>
               </div>
             </div>
-            
+
             <div className="work-with-right" ref={scrollRef}>
               <div className="work-card">
                 <div className="work-card-emoji">🧑‍💻</div>
@@ -207,7 +207,7 @@ export default function About() {
                   Who are experts in their field. They have an ambitious idea. We will help to bring their product vision to life.
                 </p>
               </div>
-              
+
               <div className="work-card">
                 <div className="work-card-emoji">🏢</div>
                 <h3 className="work-card-title">Startups</h3>
@@ -215,7 +215,7 @@ export default function About() {
                   Early-stage teams who need a strong digital foundation. We help build scalable products from the ground up.
                 </p>
               </div>
-              
+
               <div className="work-card">
                 <div className="work-card-emoji">🚀</div>
                 <h3 className="work-card-title">Scale-ups</h3>
@@ -223,7 +223,7 @@ export default function About() {
                   Growing businesses that need to move fast without breaking things. We bring structure and speed to your next phase.
                 </p>
               </div>
-              
+
               <div className="work-card">
                 <div className="work-card-emoji">🎨</div>
                 <h3 className="work-card-title">Creative Agencies</h3>
@@ -237,8 +237,8 @@ export default function About() {
       </section>
 
       {/* Built For V2 Section */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto">
+      <section className="py-24">
+        <div className="container">
           <div className="built-v2-container">
             <div className="built-v2-left">
               <span className="built-v2-label">Built For</span>

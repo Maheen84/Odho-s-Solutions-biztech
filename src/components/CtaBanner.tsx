@@ -4,7 +4,7 @@ import CtaArrow from "./CtaArrow";
 export default function CtaBanner() {
   return (
     <section className="cta-banner-section">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="container">
         <div className="cta-banner-card">
 
           {/* LEFT */}

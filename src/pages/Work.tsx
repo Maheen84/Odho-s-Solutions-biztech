@@ -96,14 +96,14 @@ export default function Work() {
       </section>
 
       {/* Featured Showcase */}
-      <section className="py-24 bg-white border-y border-line">
+      <section className="py-32 bg-white border-y border-line pt-40" id="featured-showcase">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
              <div className="max-w-2xl">
                <div className="dash-label mb-6">Featured Case Studies</div>
-               <h2 className="text-4xl md:text-6xl font-black">Our Benchmark <div className="inline text-[#e91e8c]">Projects.</div></h2>
+               <h2 className="text-4xl md:text-6xl font-black text-black">Our Benchmark <div className="inline text-[#e91e8c]">Projects.</div></h2>
              </div>
-             <p className="max-w-md text-muted font-medium text-lg">We dive deep into our clients' businesses to build scalable solutions that generate measurable results and lasting impact.</p>
+             <p className="max-w-md text-gray-700 font-medium text-lg">We dive deep into our clients' businesses to build scalable solutions that generate measurable results and lasting impact.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -178,7 +178,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="about-section-home">
-        <div className="max-w-7xl mx-auto px-6 lg:px-16 about-inner-grid" style={{position: 'relative', zIndex: 1}}>
+        <div className="container about-inner-grid" style={{position: 'relative', zIndex: 1}}>
           <img src="/assets/deco.png" alt="" style={{ 
             position: 'absolute', left: '-120px', top: '80px', width: '220px', height: '220px', 
             opacity: 0.12, transform: 'scaleX(-1)', pointerEvents: 'none', zIndex: 0 
@@ -206,7 +206,7 @@ export default function Home() {
 
       {/* ── Portfolio Showcase ───────────────────────────────────────────── */}
       <section className="portfolio-section" aria-label="Our Projects Showcase">
-        <div className="max-w-7xl mx-auto px-4 portfolio-shell">
+        <div className="portfolio-shell">
 
           {/* Header */}
           <div className="portfolio-header">
@@ -381,7 +381,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="testimonial-section">
-        <div className="max-w-6xl mx-auto">
+        <div className="container max-w-[1200px]">
           <div className="testimonial-label">Testimonial</div>
           <h2 className="testimonial-heading">Social Proof & Success Stories</h2>
           <p className="testimonial-sub">Here's what our clients have to say after partnering us — real experiences, real results, and real stories behind the Search</p>
