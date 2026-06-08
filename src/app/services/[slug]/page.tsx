@@ -1,12 +1,14 @@
-import { useParams, NavLink } from "react-router-dom";
+"use client";
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { 
   Zap, Inbox, BarChart3, Users, UserCheck, Monitor, HelpCircle, 
   Palette, Laptop, Code, CheckCircle2, Globe, Shield, RefreshCw, Layers, Check, Cpu, Search, TrendingUp, FileText, Link2, Target, Eye, Plus, Minus 
 } from "lucide-react";
-import PageHero from "../components/PageHero";
-import CtaBanner from "../components/CtaBanner";
-import CtaArrow from "../components/CtaArrow";
-import SeoPricing from "../components/SeoPricing";
+import PageHero from "../../../components/PageHero";
+import CtaBanner from "../../../components/CtaBanner";
+import CtaArrow from "../../../components/CtaArrow";
+import SeoPricing from "../../../components/SeoPricing";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -194,9 +196,9 @@ export default function ServiceDetail() {
                   <p className="text-[#555] text-base leading-relaxed mb-8">
                     We don't build generic websites. Here at Odho's Solutions, we understand all aspects of a custom website, from research to web development and hosting, so UX Design. We tailor our services to the client and the project requirements.
                   </p>
-                  <NavLink to="/contact" className="inline-flex items-center gap-3 bg-primary text-white font-bold py-3 px-8 rounded-full text-xs uppercase tracking-wider hover:bg-primary/95 transition-all">
+                  <Link href="/contact" className="inline-flex items-center gap-3 bg-primary text-white font-bold py-3 px-8 rounded-full text-xs uppercase tracking-wider hover:bg-primary/95 transition-all">
                     Book A Call Today <CtaArrow />
-                  </NavLink>
+                  </Link>
                 </div>
                 <div className="lg:col-span-6 flex justify-center">
                   <div className="relative w-full max-w-lg rounded-[24px] overflow-hidden shadow-2xl border border-[#eee]">
@@ -242,9 +244,9 @@ export default function ServiceDetail() {
                     A Team Experts That Can Build A Website You're Proud Of
                   </h2>
                 </div>
-                <NavLink to="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
+                <Link href="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
                   Get In Touch Today <CtaArrow />
-                </NavLink>
+                </Link>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -291,8 +293,8 @@ export default function ServiceDetail() {
                     Manage customer data, track analytics, view sales pipelines, build custom campaigns, and more. Empower your sales & support teams to close deals faster and keep customer data secure.
                   </p>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
+                    <Link href="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></Link>
+                    <Link href="/contact" className="btn btn-outline">Book A Call <CtaArrow /></Link>
                   </div>
                 </div>
 
@@ -413,9 +415,9 @@ export default function ServiceDetail() {
                         </li>
                       ))}
                     </ul>
-                    <NavLink to="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
+                    <Link href="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
                       Choose Plan <CtaArrow />
-                    </NavLink>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -554,8 +556,8 @@ export default function ServiceDetail() {
                     ))}
                   </ul>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
+                    <Link href="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></Link>
+                    <Link href="/contact" className="btn btn-outline">Book A Call <CtaArrow /></Link>
                   </div>
                 </div>
 
@@ -657,8 +659,8 @@ export default function ServiceDetail() {
                     ))}
                   </ul>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
+                    <Link href="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></Link>
+                    <Link href="/contact" className="btn btn-outline">Book A Call <CtaArrow /></Link>
                   </div>
                 </div>
               </div>
@@ -684,8 +686,8 @@ export default function ServiceDetail() {
                     Fusion Sync where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
                   </p>
                   <div className="flex gap-4">
-                    <NavLink to="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></NavLink>
-                    <NavLink to="/contact" className="btn btn-outline">Book A Call <CtaArrow /></NavLink>
+                    <Link href="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></Link>
+                    <Link href="/contact" className="btn btn-outline">Book A Call <CtaArrow /></Link>
                   </div>
                 </div>
                 <div className="lg:col-span-6 flex justify-center">
@@ -711,9 +713,9 @@ export default function ServiceDetail() {
                     A Team Experts That Can Build A Website You're Proud Of
                   </h2>
                 </div>
-                <NavLink to="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
+                <Link href="/contact" className="btn bg-white text-[#1a1035] hover:bg-white/90 shadow-lg shrink-0">
                   Get In Touch Today <CtaArrow />
-                </NavLink>
+                </Link>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -746,90 +748,39 @@ export default function ServiceDetail() {
           {/* Hero & Intro */}
           <section className="py-20 bg-white">
             <div className="container">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-6">
-                  <span className="text-[11px] font-bold text-primary uppercase tracking-[0.2em] mb-4 block">SEO Service</span>
-                  <h2 className="text-3xl md:text-5xl lg:text-[54px] font-black text-secondary leading-[1.1] mb-6 uppercase">
-                    DOMINATE ORGANIC SEARCH &<br />ACQUIRE CUSTOMERS ON AUTOPILOT.
-                  </h2>
-                  <p className="text-[#555] text-lg leading-relaxed mb-6 font-medium">
-                    AI-powered, human-driven SEO systems that grow traffic, boost search authority, and drive real pipeline outcomes. Zero wasted ad spend.
-                  </p>
-                  <p className="text-[#666] text-base leading-relaxed mb-10 max-w-xl">
-                    Most small business websites fail to capture organic leads because their sites aren't built to map target search intent. At BizTech, we implement intent-focused semantic clustering, hard-nosed technical SEO remediation, and proactive local growth campaigns that build compounding brand equity.
-                  </p>
-                  
-                  <div className="bg-[#fafafa] border border-[#eee] rounded-2xl p-8 mb-8">
-                    <h3 className="font-black text-xl text-secondary mb-6 uppercase">The BizTech Advantage Checklist</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <div className="text-3xl font-black text-primary mb-1">+210%</div>
-                        <div className="text-sm font-bold text-secondary mb-1">Organic Leads</div>
-                        <p className="text-xs text-muted font-medium">Proven client growth metrics within 6 months.</p>
-                      </div>
-                      <div>
-                        <div className="text-3xl font-black text-primary mb-1">-42%</div>
-                        <div className="text-sm font-bold text-secondary mb-1">Average CAC</div>
-                        <p className="text-xs text-muted font-medium">Reduce reliance on expensive, high-CPC paid ads.</p>
-                      </div>
-                      <div>
-                        <div className="text-xl font-black text-secondary mb-1 uppercase">Technical Debt Audited</div>
-                        <p className="text-xs text-muted font-medium">100% crawl, rendering, speed, and indexing resolution.</p>
-                      </div>
-                      <div>
-                        <div className="text-xl font-black text-secondary mb-1 uppercase">Intent Keyword Silos</div>
-                        <p className="text-xs text-muted font-medium">Target transactional queries ready to buy.</p>
-                      </div>
+              <div className="max-w-4xl mx-auto">
+                <span className="text-[11px] font-bold text-primary uppercase tracking-[0.2em] mb-4 block text-center">SEO Service</span>
+                <h2 className="text-3xl md:text-5xl lg:text-[54px] font-black text-secondary leading-[1.1] mb-6 uppercase text-center">
+                  DOMINATE ORGANIC SEARCH &<br />ACQUIRE CUSTOMERS ON AUTOPILOT.
+                </h2>
+                <p className="text-[#555] text-lg leading-relaxed mb-6 font-medium text-center">
+                  AI-powered, human-driven SEO systems that grow traffic, boost search authority, and drive real pipeline outcomes. Zero wasted ad spend.
+                </p>
+                <p className="text-[#666] text-base leading-relaxed mb-10 max-w-2xl mx-auto text-center">
+                  Most small business websites fail to capture organic leads because their sites aren't built to map target search intent. At BizTech, we implement intent-focused semantic clustering, hard-nosed technical SEO remediation, and proactive local growth campaigns that build compounding brand equity.
+                </p>
+                
+                <div className="bg-[#fafafa] border border-[#eee] rounded-2xl p-8 mb-8 max-w-3xl mx-auto">
+                  <h3 className="font-black text-xl text-secondary mb-6 uppercase text-center">The BizTech Advantage Checklist</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+                    <div className="p-4 bg-white rounded-xl border border-[#eee]/60">
+                      <div className="text-3xl font-black text-primary mb-1">+210%</div>
+                      <div className="text-sm font-bold text-secondary mb-1">Organic Leads</div>
+                      <p className="text-xs text-muted font-medium">Proven client growth metrics within 6 months.</p>
                     </div>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5 lg:col-start-8">
-                  {/* SEO Audit Form */}
-                  <div 
-                    className="rounded-[32px] p-8 md:p-10 relative overflow-hidden"
-                    style={{
-                      background: `
-                        radial-gradient(ellipse at top right, rgba(124, 58, 237, 0.15) 0%, rgba(232, 24, 77, 0.08) 50%, transparent 70%) padding-box,
-                        linear-gradient(#0d0d1a, #0d0d1a) padding-box,
-                        linear-gradient(to right, #e8184d, #7c3aed) border-box
-                      `,
-                      border: '1px solid transparent',
-                      boxShadow: '0 0 30px rgba(232, 24, 77, 0.4), 0 0 60px rgba(130, 50, 255, 0.2)'
-                    }}
-                  >
-                    <h3 className="text-2xl font-black text-white uppercase mb-2">Get a Free SEO Audit</h3>
-                    <p className="text-white/70 text-sm mb-8">We'll analyze your site & reply in 1 business day.</p>
-                    
-                    <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                      <div>
-                        <label className="block text-xs font-bold text-[#e8184d] uppercase tracking-wider mb-2">Full Name *</label>
-                        <input type="text" placeholder="John Doe" className="w-full bg-[#121226] border border-[#2a2a40] text-white rounded-xl px-5 py-4 focus:outline-none focus:border-[#e8184d] transition-colors" />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-[#e8184d] uppercase tracking-wider mb-2">Work Email *</label>
-                        <input type="email" placeholder="john@company.com" className="w-full bg-[#121226] border border-[#2a2a40] text-white rounded-xl px-5 py-4 focus:outline-none focus:border-[#e8184d] transition-colors" />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                          <label className="block text-xs font-bold text-[#e8184d] uppercase tracking-wider mb-2">Phone</label>
-                          <input type="tel" placeholder="+1 XXX XXX XXXX" className="w-full bg-[#121226] border border-[#2a2a40] text-white rounded-xl px-5 py-4 focus:outline-none focus:border-[#e8184d] transition-colors" />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-[#e8184d] uppercase tracking-wider mb-2">Company</label>
-                          <input type="text" placeholder="Company name" className="w-full bg-[#121226] border border-[#2a2a40] text-white rounded-xl px-5 py-4 focus:outline-none focus:border-[#e8184d] transition-colors" />
-                        </div>
-                      </div>
-                      <div>
-                        <label className="block text-xs font-bold text-[#e8184d] uppercase tracking-wider mb-2">Tell Us About Your Site / Goals *</label>
-                        <textarea placeholder="What is your website domain and target keyword?" rows={3} className="w-full bg-[#121226] border border-[#2a2a40] text-white rounded-xl px-5 py-4 focus:outline-none focus:border-[#e8184d] transition-colors resize-none"></textarea>
-                      </div>
-                      <div className="flex items-start gap-3 py-2">
-                        <input type="checkbox" id="privacy" className="mt-1 accent-[#e8184d]" />
-                        <label htmlFor="privacy" className="text-xs text-white/70 leading-relaxed cursor-pointer">I agree to the Privacy Policy.</label>
-                      </div>
-                      <button type="submit" className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider bg-gradient-to-r from-[#e8184d] to-[#7c3aed] text-white border-0 hover:shadow-[0_0_20px_rgba(232,24,77,0.4)] transition-all duration-300">Claim Free SEO Audit</button>
-                    </form>
+                    <div className="p-4 bg-white rounded-xl border border-[#eee]/60">
+                      <div className="text-3xl font-black text-primary mb-1">-42%</div>
+                      <div className="text-sm font-bold text-secondary mb-1">Average CAC</div>
+                      <p className="text-xs text-muted font-medium">Reduce reliance on expensive, high-CPC paid ads.</p>
+                    </div>
+                    <div className="p-4 bg-white rounded-xl border border-[#eee]/60">
+                      <div className="text-xl font-black text-secondary mb-1 uppercase">Technical Debt Audited</div>
+                      <p className="text-xs text-muted font-medium">100% crawl, rendering, speed, and indexing resolution.</p>
+                    </div>
+                    <div className="p-4 bg-white rounded-xl border border-[#eee]/60">
+                      <div className="text-xl font-black text-secondary mb-1 uppercase">Intent Keyword Silos</div>
+                      <p className="text-xs text-muted font-medium">Target transactional queries ready to buy.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -939,30 +890,30 @@ export default function ServiceDetail() {
           </section>
 
           {/* WHAT WE DO NOT DO */}
-          <section className="py-24 bg-gradient-to-br from-[#E8345A] via-[#5C2A78] to-[#1E1135] text-white">
-            <div className="container">
+          <section className="testimonial-section">
+            <div className="container max-w-[1200px]">
               <div className="max-w-4xl mx-auto text-center">
-                <span className="text-[11px] font-bold text-white/70 uppercase tracking-[0.2em] mb-4 block">WHAT WE DO NOT DO</span>
-                <h2 className="text-3xl md:text-5xl font-black leading-tight uppercase mb-12">
+                <div className="testimonial-label">WHAT WE DO NOT DO</div>
+                <h2 className="testimonial-heading uppercase">
                   HONEST ABOUT WHAT<br />SEO IS AND IS NOT
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
-                  <div className="bg-white/5 border border-white/10 rounded-[24px] p-8">
-                    <CheckCircle2 size={24} className="text-[#E8345A] mb-4" />
+                  <div className="bg-white/13 backdrop-blur-md border border-white/10 rounded-[22px] p-8 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                    <CheckCircle2 size={24} className="text-white mb-4" />
                     <p className="text-white/80 text-sm leading-relaxed">We do not promise first-page rankings in 30 days. Anyone who does is either lying or planning to use tactics that will eventually get your site penalized.</p>
                   </div>
-                  <div className="bg-white/5 border border-white/10 rounded-[24px] p-8">
-                    <CheckCircle2 size={24} className="text-[#E8345A] mb-4" />
+                  <div className="bg-white/13 backdrop-blur-md border border-white/10 rounded-[22px] p-8 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                    <CheckCircle2 size={24} className="text-white mb-4" />
                     <p className="text-white/80 text-sm leading-relaxed">We do not use link schemes, keyword stuffing, auto-generated content, or any other approach that violates Google’s quality guidelines.</p>
                   </div>
-                  <div className="bg-white/5 border border-white/10 rounded-[24px] p-8">
-                    <CheckCircle2 size={24} className="text-[#E8345A] mb-4" />
+                  <div className="bg-white/13 backdrop-blur-md border border-white/10 rounded-[22px] p-8 shadow-lg hover:scale-[1.02] transition-transform duration-300">
+                    <CheckCircle2 size={24} className="text-white mb-4" />
                     <p className="text-white/80 text-sm leading-relaxed">We do not pad your reports with vanity metrics that look impressive but do not connect to real business outcomes.</p>
                   </div>
                 </div>
 
-                <div className="bg-white/10 border-l-4 border-[#E8345A] p-8 md:p-10 rounded-r-[24px] text-left max-w-3xl mx-auto">
+                <div className="bg-white/13 backdrop-blur-md border-l-4 border-white/50 p-8 md:p-10 rounded-[22px] text-left max-w-3xl mx-auto shadow-lg">
                   <p className="text-xl md:text-2xl font-bold italic text-white leading-relaxed">
                     "We build sustainable search visibility through documented, legitimate strategy applied consistently over time. The results are real and they last because they were earned the right way."
                   </p>

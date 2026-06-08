@@ -1,8 +1,9 @@
+"use client";
 import { Mail, Phone, MapPin, Globe, Facebook, Instagram, Youtube, Share2 } from "lucide-react";
 import { useState } from "react";
-import CtaBanner from "../components/CtaBanner";
-import PageHero from "../components/PageHero";
-import CtaArrow from "../components/CtaArrow";
+import CtaBanner from "../../components/CtaBanner";
+import PageHero from "../../components/PageHero";
+import CtaArrow from "../../components/CtaArrow";
 
 function TikTokIcon({ size = 20 }: { size?: number }) {
   return (

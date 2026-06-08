@@ -1,9 +1,13 @@
-import { NavLink } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Work", path: "/work" },
@@ -17,34 +21,32 @@ export default function Navbar() {
     <header className="navbar-header">
       <nav className="navbar-inner">
         {/* Logo */}
-        <NavLink to="/" className="navbar-logo flex items-center">
+        <Link href="/" className="navbar-logo flex items-center">
           <img 
             src="/assets/odhos-logo.png" 
             alt="ODHO's SOLUTIONS Logo" 
             className="h-10 md:h-12 w-auto object-contain mix-blend-multiply brightness-110 contrast-125 hover:scale-105 transition-transform duration-300"
           />
-        </NavLink>
+        </Link>
 
         {/* Center Nav Pill */}
         <div className="navbar-links-pill">
           {navLinks.map((link) => (
-            <NavLink
+            <Link
               key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `navbar-link ${isActive ? "navbar-link-active" : ""}`
-              }
+              href={link.path}
+              className={`navbar-link ${pathname === link.path || (link.path !== "/" && pathname.startsWith(link.path)) ? "navbar-link-active" : ""}`}
             >
               {link.name}
-            </NavLink>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
-        <NavLink to="/contact" className="navbar-cta">
+        <Link href="/contact" className="navbar-cta">
           Hire Us
           <span className="navbar-cta-icon"><ArrowUpRight size={14} /></span>
-        </NavLink>
+        </Link>
 
         {/* Mobile Toggle */}
         <button className="navbar-mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
@@ -56,21 +58,19 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="navbar-mobile-menu">
           {navLinks.map((link) => (
-            <NavLink
+            <Link
               key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `navbar-mobile-link ${isActive ? "navbar-mobile-link-active" : ""}`
-              }
+              href={link.path}
+              className={`navbar-mobile-link ${pathname === link.path || (link.path !== "/" && pathname.startsWith(link.path)) ? "navbar-mobile-link-active" : ""}`}
               onClick={() => setMobileOpen(false)}
             >
               {link.name}
-            </NavLink>
+            </Link>
           ))}
-          <NavLink to="/contact" className="navbar-cta mt-2" onClick={() => setMobileOpen(false)}>
+          <Link href="/contact" className="navbar-cta mt-2" onClick={() => setMobileOpen(false)}>
             Hire Us
             <span className="navbar-cta-icon"><ArrowUpRight size={14} /></span>
-          </NavLink>
+          </Link>
         </div>
       )}
     </header>

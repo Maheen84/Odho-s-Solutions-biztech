@@ -1,8 +1,9 @@
+"use client";
 
-import { NavLink } from "react-router-dom";
-import PageHero from "../components/PageHero";
-import CtaArrow from "../components/CtaArrow";
-import CtaBanner from "../components/CtaBanner";
+import Link from "next/link";
+import PageHero from "../../components/PageHero";
+import CtaArrow from "../../components/CtaArrow";
+import CtaBanner from "../../components/CtaBanner";
 
 export default function Work() {
   const projects = [
@@ -87,7 +88,7 @@ export default function Work() {
                    <span className="text-[#e91e8c] text-xs font-bold uppercase tracking-widest mb-3 block">{project.category}</span>
                    <h3 className="text-2xl font-black mb-4 group-hover:text-[#e91e8c] transition-colors">{project.title}</h3>
                    <p className="text-muted text-sm leading-relaxed mb-8 flex-grow">{project.desc}</p>
-                   <NavLink to={`/services/${project.slug}`} className="btn btn-dark w-full gap-2 mt-auto">View Details <CtaArrow /></NavLink>
+                   <Link href={`/services/${project.slug}`} className="btn btn-dark w-full gap-2 mt-auto">View Details <CtaArrow /></Link>
                 </div>
               </article>
             ))}

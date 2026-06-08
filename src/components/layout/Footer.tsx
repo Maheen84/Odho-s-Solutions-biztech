@@ -1,4 +1,6 @@
-import { NavLink } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Twitter, Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import CtaArrow from "../CtaArrow";
 
@@ -25,31 +27,31 @@ export default function Footer() {
         {/* Col 1 */}
         <div className="footer-cta-col">
           <h3>Do You Like<br />What You See?</h3>
-          <NavLink to="/contact" className="footer-btn">
+          <Link href="/contact" className="footer-btn">
             Send A Project <CtaArrow />
-          </NavLink>
+          </Link>
         </div>
 
         {/* Col 2 */}
         <div className="footer-nav-col">
           <div className="footer-col-label">Learn</div>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/testimonials">Testimonials</NavLink>
-          <NavLink to="/processes">Processes</NavLink>
-          <NavLink to="/faqs">FAQs</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
+          <Link href="/about">About</Link>
+          <Link href="/testimonials">Testimonials</Link>
+          <Link href="/processes">Processes</Link>
+          <Link href="/faqs">FAQs</Link>
+          <Link href="/blog">Blog</Link>
         </div>
 
         {/* Col 3 */}
         <div className="footer-nav-col">
           <div className="footer-col-label">Explore</div>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/work">
+          <Link href="/">Home</Link>
+          <Link href="/work">
             Work <span className="new-badge">NEW</span>
-          </NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/careers">Careers</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          </Link>
+          <Link href="/services">Services</Link>
+          <Link href="/careers">Careers</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
         {/* Col 4 */}

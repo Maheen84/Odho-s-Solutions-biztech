@@ -1,8 +1,10 @@
+"use client";
+
 import { Check, Monitor, Layout, Cpu, Smartphone, Settings, BarChart3, Search } from "lucide-react";
-import { NavLink } from "react-router-dom";
-import PageHero from "../components/PageHero";
-import CtaBanner from "../components/CtaBanner";
-import CtaArrow from "../components/CtaArrow";
+import Link from "next/link";
+import PageHero from "../../components/PageHero";
+import CtaBanner from "../../components/CtaBanner";
+import CtaArrow from "../../components/CtaArrow";
 
 export default function Services() {
   const categories = [
@@ -35,12 +37,12 @@ export default function Services() {
               <div className="dash-label mb-6">What we offer</div>
               <h2 className="text-4xl md:text-5xl leading-tight">A Team of Experts That Can Build A Website You're Proud Of</h2>
             </div>
-            <NavLink to="/contact" className="btn btn-dark gap-2">Get In Touch Today <CtaArrow /></NavLink>
+            <Link href="/contact" className="btn btn-dark gap-2">Get In Touch Today <CtaArrow /></Link>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
             {categories.map((cat, idx) => (
-              <NavLink to={`/services/${cat.slug}`} key={idx} className="p-10 border border-line rounded-[32px] hover:shadow-custom hover:border-primary/20 transition-all group block bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+              <Link href={`/services/${cat.slug}`} key={idx} className="p-10 border border-line rounded-[32px] hover:shadow-custom hover:border-primary/20 transition-all group block bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                 <div className="w-14 h-14 bg-soft text-primary rounded-2xl flex items-center justify-center mb-10 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   {cat.icon}
                 </div>
@@ -49,13 +51,13 @@ export default function Services() {
                 <div className="text-primary font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                    Learn More <CtaArrow />
                 </div>
-              </NavLink>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Dashboard Preview Section (Inspired by CRM page) */}
+      {/* Dashboard Preview Section */}
       <section className="py-24 bg-navy w-full text-white overflow-hidden">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16 px-4">
@@ -109,9 +111,9 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <NavLink to="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
+                <Link href="/contact" className={`btn w-full ${plan.popular ? "bg-white text-navy" : "btn-dark opacity-100"}`}>
                   Choose Plan <CtaArrow />
-                </NavLink>
+                </Link>
               </article>
             ))}
           </div>

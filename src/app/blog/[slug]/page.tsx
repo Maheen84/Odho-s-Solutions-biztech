@@ -1,7 +1,9 @@
+"use client";
 import { Search, Copy, Facebook, Instagram, Twitter, Linkedin, Globe } from "lucide-react";
-import { NavLink, useParams } from "react-router-dom";
-import PageHero from "../components/PageHero";
-import CtaBanner from "../components/CtaBanner";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import PageHero from "../../../components/PageHero";
+import CtaBanner from "../../../components/CtaBanner";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -154,13 +156,13 @@ export default function BlogDetail() {
                  <h3 className="text-sm lg:text-base font-bold mb-3 text-white uppercase tracking-wider">Categories</h3>
                  <div className="space-y-2">
                    {["UI/UX Design", "Research", "Presentation", "Product Design", "Tools & Software", "Case Studies"].map((cat, idx) => (
-                     <NavLink 
+                     <Link 
                        key={idx} 
-                       to={`/blog?category=${cat}`} 
+                       href={`/blog?category=${cat}`} 
                        className="block py-2 px-3 rounded-[12px] text-sm font-semibold text-white/70 hover:text-white hover:bg-white/5 transition-all"
                      >
                        {cat}
-                     </NavLink>
+                     </Link>
                    ))}
                  </div>
                </div>

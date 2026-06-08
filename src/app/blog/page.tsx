@@ -1,13 +1,16 @@
+"use client";
 import { Search } from "lucide-react";
-import { useState, useEffect } from "react";
-import { NavLink, useSearchParams } from "react-router-dom";
-import PageHero from "../components/PageHero";
-import CtaBanner from "../components/CtaBanner";
-import CtaArrow from "../components/CtaArrow";
+import { useState, useEffect, Suspense } from "react";
+import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
+import PageHero from "../../components/PageHero";
+import CtaBanner from "../../components/CtaBanner";
+import CtaArrow from "../../components/CtaArrow";
 
-export default function Blog() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const categoryParam = searchParams.get("category");
+function BlogContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const categoryParam = searchParams ? searchParams.get("category") : null;
 
   useEffect(() => {
     if (categoryParam) {
@@ -22,7 +25,8 @@ export default function Blog() {
 
   const handleNavigation = (page: number) => {
     setCurrentPage(page);
-    setSearchParams({ category: categories[page - 1] });
+    const category = categories[page - 1];
+    router.push(`?category=${encodeURIComponent(category)}`, { scroll: false });
   };
 
   const posts = [
@@ -111,7 +115,7 @@ export default function Blog() {
                   10 Best Design Resources for 2024: After trying 100+ Here are My Top Picks
                 </h2>
                 <p className="text-white/80 text-lg mb-8 max-w-3xl leading-relaxed">
-                  In the ever-evolving world of design, where innovation meets aesthetics, finding the perfect resources to fuel your creative journey can be a rewarding yet daunting... <NavLink to="/blog/design-resources" className="text-white font-bold inline border-b-2 border-white/20 pb-1 hover:border-white transition-all ml-1 underline">Continue reading →</NavLink>
+                  In the ever-evolving world of design, where innovation meets aesthetics, finding the perfect resources to fuel your creative journey can be a rewarding yet daunting... <Link href="/blog/design-resources" className="text-white font-bold inline border-b-2 border-white/20 pb-1 hover:border-white transition-all ml-1 underline">Continue reading →</Link>
                 </p>
              </div>
           </article>
@@ -153,7 +157,7 @@ export default function Blog() {
                       {post.category}
                     </span>
                     <h3 className="text-xl font-black mb-3 flex items-start justify-between gap-4 group">
-                      <NavLink to={`/blog/${post.slug}`} className="hover:text-[#e91e8c] transition-colors line-clamp-2 uppercase">{post.title}</NavLink>
+                      <Link href={`/blog/${post.slug}`} className="hover:text-[#e91e8c] transition-colors line-clamp-2 uppercase">{post.title}</Link>
                       <CtaArrow />
                     </h3>
                     <p className="text-muted text-sm leading-relaxed mb-6 line-clamp-2">
@@ -205,5 +209,17 @@ export default function Blog() {
 
       <CtaBanner />
     </div>
+  );
+}
+
+export default function Blog() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-soft flex items-center justify-center">
+        <div className="text-secondary font-bold uppercase tracking-widest">Loading Blog...</div>
+      </div>
+    }>
+      <BlogContent />
+    </Suspense>
   );
 }

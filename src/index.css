@@ -2679,10 +2679,27 @@
   transform: translateY(-2px);
 }
 
-.work-card-emoji {
-  font-size: 28px;
-  margin-bottom: 12px;
-  line-height: 1;
+.work-card-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--color-primary, #E8345A);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover .work-card-icon-container {
+  background: var(--color-primary, #E8345A);
+  color: #ffffff;
+  border-color: var(--color-primary, #E8345A);
+  box-shadow: 0 8px 20px rgba(232, 52, 90, 0.2);
 }
 
 .work-card-title {

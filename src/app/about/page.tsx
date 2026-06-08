@@ -1,10 +1,12 @@
-import { Check, Quote, ArrowLeft, Play } from "lucide-react";
+"use client";
+
+import { Check, ArrowLeft, Play, Briefcase, Building2, Rocket, Palette } from "lucide-react";
 import { motion } from "motion/react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import { useState, useRef } from "react";
-import CtaBanner from "../components/CtaBanner";
-import PageHero from "../components/PageHero";
-import CtaArrow from "../components/CtaArrow";
+import CtaBanner from "../../components/CtaBanner";
+import PageHero from "../../components/PageHero";
+import CtaArrow from "../../components/CtaArrow";
 
 export default function About() {
   const [activeService, setActiveService] = useState('UI/UX Design');
@@ -59,8 +61,8 @@ export default function About() {
               Since our founding, we have been committed to more than just building websites. We design and develop holistic digital experiences from sleek web and mobile apps to impactful branding, animations, content and marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand.
             </p>
             <div className="about-btns flex flex-wrap gap-6">
-              <NavLink to="/contact" className="btn btn-dark hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Get Started Now <CtaArrow /></NavLink>
-              <NavLink to="/contact" className="btn btn-outline hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Book A Call <CtaArrow /></NavLink>
+              <Link href="/contact" className="btn btn-dark hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Get Started Now <CtaArrow /></Link>
+              <Link href="/contact" className="btn btn-outline hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all duration-200">Book A Call <CtaArrow /></Link>
             </div>
           </div>
         </section>
@@ -200,7 +202,9 @@ export default function About() {
 
             <div className="work-with-right" ref={scrollRef}>
               <div className="work-card">
-                <div className="work-card-emoji">🧑‍💻</div>
+                <div className="work-card-icon-container">
+                  <Briefcase size={22} />
+                </div>
                 <h3 className="work-card-title">Entrepreneurs</h3>
                 <p className="work-card-desc">
                   Who are experts in their field. They have an ambitious idea. We will help to bring their product vision to life.
@@ -208,7 +212,9 @@ export default function About() {
               </div>
 
               <div className="work-card">
-                <div className="work-card-emoji">🏢</div>
+                <div className="work-card-icon-container">
+                  <Building2 size={22} />
+                </div>
                 <h3 className="work-card-title">Startups</h3>
                 <p className="work-card-desc">
                   Early-stage teams who need a strong digital foundation. We help build scalable products from the ground up.
@@ -216,7 +222,9 @@ export default function About() {
               </div>
 
               <div className="work-card">
-                <div className="work-card-emoji">🚀</div>
+                <div className="work-card-icon-container">
+                  <Rocket size={22} />
+                </div>
                 <h3 className="work-card-title">Scale-ups</h3>
                 <p className="work-card-desc">
                   Growing businesses that need to move fast without breaking things. We bring structure and speed to your next phase.
@@ -224,7 +232,9 @@ export default function About() {
               </div>
 
               <div className="work-card">
-                <div className="work-card-emoji">🎨</div>
+                <div className="work-card-icon-container">
+                  <Palette size={22} />
+                </div>
                 <h3 className="work-card-title">Creative Agencies</h3>
                 <p className="work-card-desc">
                   Studios and agencies that need a reliable tech partner. We integrate seamlessly into your existing workflow.

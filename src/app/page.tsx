@@ -1,6 +1,8 @@
-import { X, ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+"use client";
+
+import { ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import CtaBanner from "../components/CtaBanner";
 import CtaArrow from "../components/CtaArrow";
 
@@ -148,9 +150,9 @@ export default function Home() {
               <TrendingUp className="hero-arrow-icon" style={{display: 'inline', verticalAlign: 'middle'}} />
             </h1>
             <div className="hero-image-wrap relative">
-              <NavLink to="/contact" className="hero-btn hero-image-cta inline-flex">
+              <Link href="/contact" className="hero-btn hero-image-cta inline-flex">
                 Book A Call <CtaArrow />
-              </NavLink>
+              </Link>
               <img
                 src="/assets/bright-office-team-collaboration.jpeg"
                 alt="Team collaborating around an office table"
@@ -197,8 +199,8 @@ export default function Home() {
               {' '}where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek <strong>web and mobile apps</strong>, to impactful branding, animations, content & marketing that deliver real value for businesses. Our team blends innovation, technical expertise, and a client-first mindset to help you elevate your brand, connect with your audience, and thrive online.
             </p>
             <div className="flex flex-wrap gap-4">
-              <NavLink to="/about" className="btn btn-dark gap-2">About Odho's Solution <CtaArrow /></NavLink>
-              <NavLink to="/contact" className="btn btn-outline">Book a Call</NavLink>
+              <Link href="/about" className="btn btn-dark gap-2">About Odho's Solution <CtaArrow /></Link>
+              <Link href="/contact" className="btn btn-outline">Book a Call</Link>
             </div>
           </div>
         </div>
@@ -308,9 +310,9 @@ export default function Home() {
             </p>
             <div className="home-services-list">
               {services.map((service) => (
-                <NavLink 
+                <Link 
                   key={service.id} 
-                  to={`/services/${service.slug}`}
+                  href={`/services/${service.slug}`}
                   onMouseEnter={() => setActiveService(service.slug)}
                   onFocus={() => setActiveService(service.slug)}
                   className={`home-service-item ${activeService === service.slug ? "home-service-item-active" : ""}`}
@@ -318,7 +320,7 @@ export default function Home() {
                   <span className="home-service-index">{service.id}</span>
                   <span className="home-service-label">{service.title}</span>
                   <span className="ml-auto text-white font-bold text-lg">→</span>
-                </NavLink>
+                </Link>
               ))}
             </div>
           </div>
@@ -330,7 +332,7 @@ export default function Home() {
             />
           </div>
           <div className="home-services-cards">
-            <NavLink to="/work" className="home-service-info-card home-service-info-card-muted">
+            <Link href="/work" className="home-service-info-card home-service-info-card-muted">
               <p>Ever wonder how design magic happens?</p>
               <div className="home-service-card-bottom">
                 <h3>See How We Work</h3>
@@ -338,8 +340,8 @@ export default function Home() {
                   <ArrowUpRight size={20} strokeWidth={1.8} />
                 </span>
               </div>
-            </NavLink>
-            <NavLink to="/contact" className="home-service-info-card home-service-info-card-primary">
+            </Link>
+            <Link href="/contact" className="home-service-info-card home-service-info-card-primary">
               <p>Looking for design experts who can bring your vision to life?</p>
               <div className="home-service-card-bottom">
                 <h3>Meet Our Expert</h3>
@@ -347,7 +349,7 @@ export default function Home() {
                   <ArrowUpRight size={20} strokeWidth={1.8} />
                 </span>
               </div>
-            </NavLink>
+            </Link>
           </div>
         </div>
       </section>
@@ -360,7 +362,7 @@ export default function Home() {
               <h2>Why Our Clients Choose Us As Partners</h2>
               <div className="why-divider" />
             </div>
-            <NavLink to="/contact" className="book-btn why-book-btn">Book A Call <CtaArrow /></NavLink>
+            <Link href="/contact" className="book-btn why-book-btn">Book A Call <CtaArrow /></Link>
           </div>
           <div className="why-clients-grid">
             {[
@@ -388,7 +390,7 @@ export default function Home() {
           <div className="relative max-w-4xl mx-auto mt-10 mx-8" style={{paddingLeft: '32px', paddingRight: '32px'}}>
               <div className="test-card">
                 <div className="test-left">
-                  <div className="test-quote">“</div>
+                  <div className="test-quote">"</div>
                   <p className="test-text">{testimonials[testIndex].quote}</p>
                   <div className="flex items-center gap-4">
                     <img src={testimonials[testIndex].avatar} alt={testimonials[testIndex].name} className="test-avatar" />
@@ -457,7 +459,7 @@ export default function Home() {
             <div className="contact-card">
               <img src="/assets/designer-sketching.jpg" alt="Designer sketching" className="contact-avatar" />
               <div className="contact-text">Feel free to reach out whenever<span> you have questions.</span></div>
-              <NavLink to="/contact" className="ask-btn">Ask a question</NavLink>
+              <Link href="/contact" className="ask-btn">Ask a question</Link>
             </div>
           </div>
         </div>

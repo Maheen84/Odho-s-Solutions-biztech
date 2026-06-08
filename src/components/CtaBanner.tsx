@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import CtaArrow from "./CtaArrow";
 
 export default function CtaBanner() {
@@ -18,9 +18,9 @@ export default function CtaBanner() {
             </p>
 
             <div className="cta-banner-actions">
-              <NavLink to="/contact" className="cta-banner-btn">
+              <Link href="/contact" className="cta-banner-btn">
                 Get Started Free <CtaArrow />
-              </NavLink>
+              </Link>
 
               <div className="cta-banner-rating">
                 <div className="cta-banner-avatars">
@@ -53,9 +53,9 @@ export default function CtaBanner() {
               <p className="cta-banner-card-text">
                 Book a completely free discovery call with our founder.
               </p>
-              <NavLink to="/contact" className="cta-banner-card-btn">
+              <Link href="/contact" className="cta-banner-card-btn">
                 Book A Call <CtaArrow />
-              </NavLink>
+              </Link>
             </div>
           </div>
 

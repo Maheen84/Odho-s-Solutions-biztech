@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 
 interface PageHeroProps {
   title: string;
@@ -19,7 +19,7 @@ export default function PageHero({ title, breadcrumbText, description }: PageHer
           <p className="page-hero-desc">{description}</p>
         )}
         <nav className="page-hero-breadcrumb">
-          <NavLink to="/" className="page-hero-bc-link">Home</NavLink>
+          <Link href="/" className="page-hero-bc-link">Home</Link>
           <span className="page-hero-bc-sep">›</span>
           <span className="page-hero-bc-current">{breadcrumbText}</span>
         </nav>
