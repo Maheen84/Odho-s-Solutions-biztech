@@ -757,11 +757,11 @@ export default function ServiceDetail() {
                   AI-powered, human-driven SEO systems that grow traffic, boost search authority, and drive real pipeline outcomes. Zero wasted ad spend.
                 </p>
                 <p className="text-[#666] text-base leading-relaxed mb-10 max-w-2xl mx-auto text-center">
-                  Most small business websites fail to capture organic leads because their sites aren't built to map target search intent. At BizTech, we implement intent-focused semantic clustering, hard-nosed technical SEO remediation, and proactive local growth campaigns that build compounding brand equity.
+                  Most small business websites fail to capture organic leads because their sites aren't built to map target search intent. At Odho's Solutions, we implement intent-focused semantic clustering, hard-nosed technical SEO remediation, and proactive local growth campaigns that build compounding brand equity.
                 </p>
                 
                 <div className="bg-[#fafafa] border border-[#eee] rounded-2xl p-8 mb-8 max-w-3xl mx-auto">
-                  <h3 className="font-black text-xl text-secondary mb-6 uppercase text-center">The BizTech Advantage Checklist</h3>
+                  <h3 className="font-black text-xl text-secondary mb-6 uppercase text-center">The Odho's Solutions Advantage Checklist</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
                     <div className="p-4 bg-white rounded-xl border border-[#eee]/60">
                       <div className="text-3xl font-black text-primary mb-1">+210%</div>
