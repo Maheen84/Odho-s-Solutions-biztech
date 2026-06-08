@@ -4929,8 +4929,10 @@ a.cta-banner-card-btn .navbar-cta-icon,
 @media (min-width: 1024px) and (max-width: 1560px) {
   .container {
     padding-left: 96px !important;
+    padding-right: 96px !important;
   }
   .navbar-inner {
     padding-left: 96px !important;
+    padding-right: 96px !important;
   }
 }

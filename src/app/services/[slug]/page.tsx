@@ -146,7 +146,7 @@ export default function ServiceDetail() {
                 </div>
                 <div className="lg:col-span-8 lg:pt-6">
                   <p className="text-[#555] text-base leading-[1.8] max-w-3xl">
-                    Web development is not just about coding a site &mdash; it's about building a digital presence that works. At Designco, we craft websites that are fast, secure, and designed to engage your audience while growing your business.
+                    Web development is not just about coding a site &mdash; it's about building a digital presence that works. At Odho's Solutions, we craft websites that are fast, secure, and designed to engage your audience while growing your business.
                   </p>
                 </div>
               </div>
@@ -683,7 +683,7 @@ export default function ServiceDetail() {
                     Smart POS System for Modern Businesses
                   </h2>
                   <p className="text-[#555] text-base leading-relaxed mb-8 max-w-xl">
-                    Fusion Sync where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
+                    Odho's Solutions where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
                   </p>
                   <div className="flex gap-4">
                     <Link href="/contact" className="btn btn-dark">Get Started Now <CtaArrow /></Link>

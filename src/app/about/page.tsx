@@ -145,7 +145,7 @@ export default function About() {
               <div className="philosophy-testi-avatar"></div>
               <div className="philosophy-testi-info">
                 <span className="philosophy-testi-name">Max Yekuabyegik</span>
-                <span className="philosophy-testi-title">CTO, Fusionyync</span>
+                <span className="philosophy-testi-title">CTO, Odho's Solutions</span>
               </div>
             </div>
             <div className="philosophy-testi-quote">
@@ -275,7 +275,7 @@ export default function About() {
               </div>
               <div>
                 <p className="built-v2-text">
-                  Fusion Sync where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
+                  Odho's Solutions where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
                 </p>
                 <div className="built-v2-stats">
                   <div>
@@ -301,7 +301,7 @@ export default function About() {
                   </div>
                   <div>
                     <div className="built-v2-cta-title">Hear From CEO</div>
-                    <div className="built-v2-cta-sub">Founder Of FusionSync</div>
+                    <div className="built-v2-cta-sub">Founder Of Odho's Solutions</div>
                   </div>
                 </div>
               </div>
