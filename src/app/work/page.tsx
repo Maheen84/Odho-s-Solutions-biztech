@@ -137,23 +137,25 @@ export default function Work() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 mx-4 md:mx-10">
-        <div className="container bg-gradient-to-br from-[#1a1035] to-[#3b1c6e] rounded-[40px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
-           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10">
-              <div className="pt-8 md:pt-0">
-                 <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">500+</strong>
-                 <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Completed Projects</span>
-              </div>
-              <div className="pt-8 md:pt-0">
-                 <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">15k</strong>
-                 <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Satisfied Clients</span>
-              </div>
-              <div className="pt-8 md:pt-0">
-                 <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">94%</strong>
-                 <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Success Rate</span>
-              </div>
-           </div>
+      <section className="py-24">
+        <div className="container">
+          <div className="bg-gradient-to-br from-[#1a1035] to-[#3b1c6e] rounded-[40px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
+             <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div className="pt-8 md:pt-0">
+                   <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">500+</strong>
+                   <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Completed Projects</span>
+                </div>
+                <div className="pt-8 md:pt-0">
+                   <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">15k</strong>
+                   <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Satisfied Clients</span>
+                </div>
+                <div className="pt-8 md:pt-0">
+                   <strong className="text-6xl md:text-8xl font-black block mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">94%</strong>
+                   <span className="text-[#e91e8c] font-bold uppercase tracking-widest text-sm">Success Rate</span>
+                </div>
+             </div>
+          </div>
         </div>
       </section>
 

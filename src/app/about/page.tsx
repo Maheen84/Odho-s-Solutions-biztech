@@ -278,22 +278,12 @@ export default function About() {
                   Odho's Solutions where creativity meets precision in digital transformation. Since our founding, we've been committed to more than just building websites. We design and develop holistic digital experiences from sleek.
                 </p>
                 <div className="built-v2-stats">
-                  <div>
-                    <div className="built-v2-stat-num">500+</div>
-                    <div className="built-v2-stat-label">Completed Projects</div>
-                  </div>
-                  <div>
-                    <div className="built-v2-stat-num">15k</div>
-                    <div className="built-v2-stat-label">Completed Projects</div>
-                  </div>
-                  <div>
-                    <div className="built-v2-stat-num">10k</div>
-                    <div className="built-v2-stat-label">Completed Projects</div>
-                  </div>
-                  <div>
-                    <div className="built-v2-stat-num">45+</div>
-                    <div className="built-v2-stat-label">Completed Projects</div>
-                  </div>
+                  {stats.map((stat, idx) => (
+                    <div key={idx}>
+                      <div className="built-v2-stat-num">{stat.val}</div>
+                      <div className="built-v2-stat-label">{stat.label}</div>
+                    </div>
+                  ))}
                 </div>
                 <div className="built-v2-cta">
                   <div className="built-v2-icon">
