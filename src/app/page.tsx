@@ -254,59 +254,33 @@ export default function Home() {
                     className="pf-card-wrapper"
                     style={isMobile ? { width: cardWidth, flex: `0 0 ${cardWidth}px` } : undefined}
                   >
-                    {isMobile ? (
-                      <div className="bg-white rounded-[16px] p-5 flex flex-col gap-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full relative min-h-[340px] w-full">
-                        {/* Logo */}
-                        <div className="relative z-10">
-                          <img src={project.logo} alt={project.title} className="h-[40px] w-auto object-contain mb-4" />
-                        </div>
-                        {/* Rotated screenshot — absolute positioned top-right */}
-                        <div className="absolute top-[-10px] right-[-20px] w-[55%] rotate-6 z-0 pointer-events-none">
-                          <img src={project.img} alt={project.title} className="w-full rounded-[10px] shadow-[8px_8px_24px_rgba(0,0,0,0.15)] object-cover" />
-                        </div>
-                        {/* Content bottom-left */}
-                        <div className="relative z-10 mt-auto flex flex-col gap-3">
-                          <h3 className="text-lg font-bold text-black leading-tight">{project.title}</h3>
-                          <p className="text-gray-500 text-[13px] leading-relaxed line-clamp-2">{project.desc}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map(tag => (
-                              <span key={tag} className="bg-[#f0f0f0] text-[#333] text-[10px] rounded-full px-3 py-1 font-semibold">{tag}</span>
+                    <div className="pf-card" style={isMobile ? { width: "100%" } : undefined}>
+                      <div className="pf-card-info">
+                        <img
+                          src={project.logo}
+                          alt={project.title}
+                          className="pf-card-logo"
+                        />
+                        <div className="pf-card-body">
+                          <h3 className="pf-card-title">{project.title}</h3>
+                          <p className="pf-card-desc">{project.desc}</p>
+                          <div className="pf-card-tags">
+                            {project.tags.map((tag, ti) => (
+                              <span key={tag} className="pf-tag">{tag}</span>
                             ))}
                           </div>
-                          <p className="text-[#999] text-[11px]">{project.sub}</p>
                         </div>
                       </div>
-                    ) : (
-                      <>
-                        <div className="pf-card">
-                          <div className="pf-card-info">
-                            <img
-                              src={project.logo}
-                              alt={project.title}
-                              className="pf-card-logo"
-                            />
-                            <div className="pf-card-body">
-                              <h3 className="pf-card-title">{project.title}</h3>
-                              <p className="pf-card-desc">{project.desc}</p>
-                              <div className="pf-card-tags">
-                                {project.tags.map((tag, ti) => (
-                                  <span key={tag} className="pf-tag">{tag}</span>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                          <div className="pf-card-visual" aria-hidden="true">
-                            <div className="pf-card-mockup-area">
-                              <div className="pf-card-mockup-mask">
-                                <img src={project.img} alt="" className="pf-card-mockup-back" />
-                                <img src={project.img} alt="" className="pf-card-mockup-front" />
-                              </div>
-                            </div>
+                      <div className="pf-card-visual" aria-hidden="true">
+                        <div className="pf-card-mockup-area">
+                          <div className="pf-card-mockup-mask">
+                            <img src={project.img} alt="" className="pf-card-mockup-back" />
+                            <img src={project.img} alt="" className="pf-card-mockup-front" />
                           </div>
                         </div>
-                        <p className="pf-card-sub-external">{project.sub}</p>
-                      </>
-                    )}
+                      </div>
+                    </div>
+                    <p className="pf-card-sub-external">{project.sub}</p>
                   </div>
                 ))}
             </div>
