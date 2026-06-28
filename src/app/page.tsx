@@ -22,10 +22,9 @@ export default function Home() {
   }, []);
 
   const isMobile = windowWidth <= 768;
-  // Mobile: 2 cards visible at once with a 10px gap between them
-  // Card width = (viewport - 32px shell padding - 10px gap) / 2
+  // Mobile: 1 card visible at a time, full width minus shell padding
   const cardGap = isMobile ? 10 : 24;
-  const cardWidth = isMobile ? Math.floor((windowWidth - 32 - cardGap) / 2) : 750;
+  const cardWidth = isMobile ? windowWidth - 32 : 750;
   const slideDistance = cardWidth + cardGap;
 
   const testimonials = [
