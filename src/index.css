@@ -4282,9 +4282,9 @@ a.cta-banner-card-btn .navbar-cta-icon,
     overflow: hidden !important;
   }
 
+  /* Card wrapper width is driven by JS inline style on mobile (half-viewport) */
   .pf-card-wrapper {
-    width: calc(100vw - 32px) !important;
-    flex: 0 0 calc(100vw - 32px) !important;
+    flex-shrink: 0 !important;
     gap: 10px !important;
   }
 
@@ -4329,6 +4329,29 @@ a.cta-banner-card-btn .navbar-cta-icon,
   .pf-card-logo {
     max-width: 100px !important;
     margin-bottom: 16px !important;
+  }
+
+  /* ── Mobile dot indicators ───────────────────────────────────────── */
+  .portfolio-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  .portfolio-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #D0D0D0;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+
+  .portfolio-dot-active {
+    background: #DA375C;
+    transform: scale(1.35);
   }
 
   /* SERVICES HOME */

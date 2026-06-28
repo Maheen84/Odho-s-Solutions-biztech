@@ -21,8 +21,11 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const cardWidth = windowWidth <= 768 ? windowWidth - 32 : 750;
-  const cardGap = windowWidth <= 768 ? 10 : 24;
+  const isMobile = windowWidth <= 768;
+  // Mobile: 2 cards visible at once with a 10px gap between them
+  // Card width = (viewport - 32px shell padding - 10px gap) / 2
+  const cardGap = isMobile ? 10 : 24;
+  const cardWidth = isMobile ? Math.floor((windowWidth - 32 - cardGap) / 2) : 750;
   const slideDistance = cardWidth + cardGap;
 
   const testimonials = [
@@ -139,6 +142,15 @@ export default function Home() {
     }
   }, [isTransitionEnabled]);
 
+  // Auto-slide every 3s on mobile — continuous forward loop, no snap-back
+  useEffect(() => {
+    if (!isMobile) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalExtendedSlides);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [isMobile, totalExtendedSlides]);
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -238,8 +250,12 @@ export default function Home() {
               }}
             >
               {extendedProjects.map((project, i) => (
-                  <div key={`slide-${i}-${project.title}`} className="pf-card-wrapper">
-                    <div className="pf-card">
+                  <div
+                    key={`slide-${i}-${project.title}`}
+                    className="pf-card-wrapper"
+                    style={isMobile ? { width: cardWidth, flex: `0 0 ${cardWidth}px` } : undefined}
+                  >
+                    <div className="pf-card" style={isMobile ? { width: "100%" } : undefined}>
                       <div className="pf-card-info">
                         <img
                           src={project.logo}
@@ -271,31 +287,46 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Nav: progress bar stretches full width, arrows pinned right */}
-          <div className="portfolio-nav" aria-label="Portfolio navigation">
-            <div className="portfolio-progress" aria-hidden="true">
-              <div
-                className="portfolio-progress-fill"
-                style={{
-                  width: `${((currentSlide - 1 + actualProjectCount) % actualProjectCount + 1) / actualProjectCount * 100}%`,
-                }}
-              />
+          {/* Nav: progress bar + arrows on desktop; dots on mobile */}
+          {isMobile ? (
+            <div className="portfolio-dots" aria-label="Portfolio navigation">
+              {projects.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`portfolio-dot${
+                    ((currentSlide - 1 + actualProjectCount) % actualProjectCount) === idx
+                      ? " portfolio-dot-active"
+                      : ""
+                  }`}
+                />
+              ))}
             </div>
-            <button
-              onClick={prevProject}
-              className="portfolio-nav-btn"
-              aria-label="Previous projects"
-            >
-              ←
-            </button>
-            <button
-              onClick={nextProject}
-              className="portfolio-nav-btn"
-              aria-label="Next projects"
-            >
-              →
-            </button>
-          </div>
+          ) : (
+            <div className="portfolio-nav" aria-label="Portfolio navigation">
+              <div className="portfolio-progress" aria-hidden="true">
+                <div
+                  className="portfolio-progress-fill"
+                  style={{
+                    width: `${((currentSlide - 1 + actualProjectCount) % actualProjectCount + 1) / actualProjectCount * 100}%`,
+                  }}
+                />
+              </div>
+              <button
+                onClick={prevProject}
+                className="portfolio-nav-btn"
+                aria-label="Previous projects"
+              >
+                ←
+              </button>
+              <button
+                onClick={nextProject}
+                className="portfolio-nav-btn"
+                aria-label="Next projects"
+              >
+                →
+              </button>
+            </div>
+          )}
 
         </div>
       </section>
