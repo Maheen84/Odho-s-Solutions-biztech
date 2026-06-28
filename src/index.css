@@ -863,7 +863,7 @@
   height: 527px !important;
   overflow: hidden !important;
   display: grid !important;
-  grid-template-columns: 240px minmax(0, 1fr) !important;
+  grid-template-columns: 225px minmax(0, 1fr) !important;
   gap: 0 !important;
   align-items: center !important;
   padding: 40px 0 40px 32px !important;
@@ -883,8 +883,8 @@
   justify-content: center !important;
   padding-top: 0 !important;
   width: 100% !important;
-  max-width: 280px !important;
-  padding: 10px 10px 80px 50px !important;
+  max-width: 220px !important;
+  padding: 10px 10px 80px 10px !important;
   box-sizing: border-box !important;
   background: transparent !important;
 }
@@ -929,7 +929,7 @@
   line-height: 100% !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
-  width: 227px !important;
+  width: 100% !important;
   height: 76px !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
@@ -946,37 +946,32 @@
   line-height: 24px !important;
   margin: 0 0 12px 0 !important;
   /* exact spacing between description and tags */
-  width: 233px !important;
+  width: 100% !important;
   height: 48px !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  white-space: normal !important;
 }
 
 /* Tags — vertical row wrap with exact pill shape */
 .pf-card-tags {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
   gap: 8px !important;
-  margin-top: 12px !important;
-  min-width: 0 !important;
-  align-items: flex-start !important;
   width: 100% !important;
+  margin-top: 10px !important;
 }
 
 .pf-tag {
-  min-width: fit-content !important;
-  height: 30px !important;
-  padding: 6px 16px !important;
-  background: #F4F4F8 !important;
-  border: none !important;
-  border-radius: 50px !important;
-  font-family: 'Figtree', sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 500 !important;
-  line-height: 150% !important;
+  background: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
   color: #161616 !important;
   white-space: nowrap !important;
   display: inline-flex !important;
@@ -992,12 +987,6 @@
   transform: translateY(-1px) !important;
 }
 
-/* ── Mockup image container ───────────────────────────────────────── */
-/* ── Mockup image container ───────────────────────────────────────── */
-/* ── Mockup image container ───────────────────────────────────────── */
-/* ── Mockup image container ───────────────────────────────────────── */
-/* ── Mockup image container ───────────────────────────────────────── */
-/* ── Mockup image container ───────────────────────────────────────── */
 /* ── Mockup image container ───────────────────────────────────────── */
 .pf-card-mockup-area {
   width: 100% !important;
@@ -1018,7 +1007,7 @@
   position: absolute !important;
   top: -270px !important;
   left: -190px !important;
-  width: 300px !important;
+  width: 400px !important;
   height: auto !important;
   transform: rotate(-39.47deg) !important;
   transform-origin: top left !important;
@@ -1033,7 +1022,7 @@
   top: 200px !important;
   right: 200px !important;
   left: -50px !important;
-  width: 317.42px !important;
+  width: 422.42px !important;
   height: auto !important;
   transform: rotate(-39.47deg) !important;
   transform-origin: top left !important;
