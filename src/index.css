@@ -1128,6 +1128,98 @@
   }
 }
 
+/* ── Mobile: scale down card sizes only — layout/positioning unchanged ── */
+@media (max-width: 768px) {
+  .portfolio-section {
+    overflow: hidden !important;
+    contain: paint !important;
+  }
+
+  .portfolio-shell {
+    overflow: hidden !important;
+    padding: 0 16px !important;
+  }
+
+  .portfolio-slider-viewport {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    contain: paint !important;
+  }
+
+  .portfolio-slider-track {
+    gap: 10px !important;
+  }
+
+  .pf-card-wrapper {
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .pf-card {
+    min-height: 320px !important;
+    height: 320px !important;
+    grid-template-columns: 140px minmax(0, 1fr) !important;
+    padding: 20px 0 20px 16px !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .pf-card-info,
+  .pf-card-content {
+    max-width: 130px !important;
+    padding: 8px 6px 40px 6px !important;
+  }
+
+  .pf-card-logo {
+    max-width: 90px !important;
+    margin-top: 10px !important;
+    margin-bottom: 6px !important;
+    margin-left: -16px !important;
+  }
+
+  .pf-card-body {
+    margin-top: 60px !important;
+  }
+
+  .pf-card-title {
+    font-size: 18px !important;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.2 !important;
+    height: auto !important;
+  }
+
+  .pf-card-desc {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 8px 0 !important;
+    height: auto !important;
+  }
+
+  .pf-card-tags {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin-top: 6px !important;
+  }
+
+  .pf-tag {
+    padding: 3px 8px !important;
+    font-size: 9px !important;
+  }
+
+  .pf-card-mockup-area {
+    height: 320px !important;
+  }
+
+  .pf-card-sub-external {
+    font-size: 10px !important;
+    padding-top: 10px !important;
+  }
+}
+
 
 /* ===================== SERVICES SECTION (Home) ===================== */
 .home-services-section {

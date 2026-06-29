@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, Star, TrendingUp, ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import CtaBanner from "../components/CtaBanner";
 import CtaArrow from "../components/CtaArrow";
@@ -14,17 +14,28 @@ export default function Home() {
   const [activeService, setActiveService] = useState("web-design");
 
   const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const sliderViewportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (sliderViewportRef.current) {
+        setViewportWidth(sliderViewportRef.current.clientWidth);
+      }
+    };
+    // Measure immediately after mount
+    if (sliderViewportRef.current) {
+      setViewportWidth(sliderViewportRef.current.clientWidth);
+    }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const isMobile = windowWidth <= 768;
-  // Mobile: 1 card visible at a time, full width minus shell padding
+  // Mobile: use measured viewport width so slide math is pixel-perfect
   const cardGap = isMobile ? 10 : 24;
-  const cardWidth = isMobile ? windowWidth - 32 : 750;
+  const cardWidth = isMobile ? (viewportWidth > 0 ? viewportWidth : windowWidth - 32) : 750;
   const slideDistance = cardWidth + cardGap;
 
   const testimonials = [
@@ -231,7 +242,7 @@ export default function Home() {
           <div className="portfolio-header-divider" />
 
           {/* Cards */}
-          <div className="portfolio-slider-viewport overflow-hidden">
+          <div className="portfolio-slider-viewport overflow-hidden" ref={sliderViewportRef}>
             <div
               className="portfolio-slider-track"
               style={{
