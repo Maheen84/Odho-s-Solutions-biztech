@@ -218,8 +218,8 @@ export default function Home() {
       </section>
 
       {/* ── Portfolio Showcase ───────────────────────────────────────────── */}
-      <section className="portfolio-section" aria-label="Our Projects Showcase">
-        <div className="container portfolio-shell">
+      <section className="portfolio-section overflow-hidden" aria-label="Our Projects Showcase">
+        <div className="container portfolio-shell overflow-hidden">
 
           {/* Header */}
           <div className="portfolio-header">
@@ -231,7 +231,7 @@ export default function Home() {
           <div className="portfolio-header-divider" />
 
           {/* Cards */}
-          <div className="portfolio-slider-viewport">
+          <div className="portfolio-slider-viewport overflow-hidden">
             <div
               className="portfolio-slider-track"
               style={{
@@ -251,20 +251,20 @@ export default function Home() {
               {extendedProjects.map((project, i) => (
                   <div
                     key={`slide-${i}-${project.title}`}
-                    className="pf-card-wrapper"
+                    className="pf-card-wrapper max-md:max-h-[420px]"
                     style={isMobile ? { width: cardWidth, flex: `0 0 ${cardWidth}px` } : undefined}
                   >
-                    <div className="pf-card" style={isMobile ? { width: "100%" } : undefined}>
+                    <div className="pf-card max-md:!h-[420px] max-md:!min-h-[420px]" style={isMobile ? { width: "100%" } : undefined}>
                       <div className="pf-card-info">
                         <img
                           src={project.logo}
                           alt={project.title}
-                          className="pf-card-logo"
+                          className="pf-card-logo max-md:!mt-0"
                         />
-                        <div className="pf-card-body">
+                        <div className="pf-card-body max-md:!mt-4">
                           <h3 className="pf-card-title">{project.title}</h3>
                           <p className="pf-card-desc">{project.desc}</p>
-                          <div className="pf-card-tags">
+                          <div className="pf-card-tags flex flex-row flex-wrap gap-2">
                             {project.tags.map((tag, ti) => (
                               <span key={tag} className="pf-tag">{tag}</span>
                             ))}
